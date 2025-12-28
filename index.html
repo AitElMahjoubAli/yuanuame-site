@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YUANUAME - Bijoux Artisanaux de Luxe</title>
+    <title>YUANUAME - Bracelet Acier Premium</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -15,75 +15,80 @@
         }
 
         :root {
-            /* NOUVELLE PALETTE PROFESSIONNELLE */
-            --primary: #2C3E50; /* Bleu nuit profond */
-            --primary-dark: #1A252F;
-            --primary-light: #34495E;
-            --secondary: #A67C52; /* Or bronze */
-            --secondary-dark: #8B5A2B;
-            --accent: #D4AF37; /* Or doré */
-            --accent-light: #E8C872;
-            --black: #121212;
+            /* PALETTE MAT ÉLÉGANTE */
+            --black-matte: #1A1A1A;
+            --dark-gray: #2D2D2D;
+            --medium-gray: #4A4A4A;
+            --light-gray: #E8E8E8;
+            --cream: #F8F5F0;
+            --bronze: #8B7355;
+            --bronze-dark: #6B573F;
+            --bronze-light: #C0A987;
             --white: #FFFFFF;
-            --light-bg: #F5F7FA;
-            --dark-bg: #1A1A1A;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --success: #27ae60;
-            --error: #e74c3c;
-            --gold: #D4AF37;
-            --shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
-            --shadow-hover: 0 15px 40px rgba(44, 62, 80, 0.2);
-            --best-seller-border: 2px solid #D4AF37;
+            
+            --shadow-soft: 0 4px 12px rgba(26, 26, 26, 0.05);
+            --shadow-medium: 0 8px 24px rgba(26, 26, 26, 0.08);
+            --transition: all 0.3s ease;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            color: var(--black);
-            background-color: var(--white);
-            overflow-x: hidden;
+            color: var(--black-matte);
+            background-color: var(--cream);
             line-height: 1.6;
-            transition: var(--transition);
-        }
-
-        body.rtl {
-            direction: rtl;
-            text-align: right;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        section {
-            padding: 80px 0;
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--bronze);
+            color: var(--white);
+            text-decoration: none;
+            border: none;
+            border-radius: 2px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            cursor: pointer;
         }
 
-        .text-center {
-            text-align: center;
+        .btn:hover {
+            background-color: var(--bronze-dark);
+            transform: translateY(-2px);
         }
 
-        /* HEADER */
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--bronze);
+            color: var(--bronze);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bronze);
+            color: var(--white);
+        }
+
+        /* HEADER SIMPLIFIÉ */
         header {
             background-color: var(--white);
-            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.97);
+            box-shadow: var(--shadow-soft);
+            padding: 15px 0;
         }
 
         .header-container {
@@ -93,44 +98,10 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--black);
-        }
-
-        .logo-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
-        }
-
-        .logo-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
-
-        .logo-subtitle {
-            font-size: 0.7rem;
-            color: var(--secondary);
-            font-weight: 500;
-            letter-spacing: 2px;
-            margin-top: 2px;
+            color: var(--black-matte);
+            text-decoration: none;
         }
 
         .nav-links {
@@ -139,984 +110,305 @@
             gap: 30px;
         }
 
-        .nav-links li a {
-            color: var(--primary);
+        .nav-links a {
+            color: var(--medium-gray);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--bronze);
+        }
+
+        .cart-btn {
             position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links li a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            transition: var(--transition);
-        }
-
-        .nav-links li a:hover {
-            color: var(--secondary);
-        }
-
-        .nav-links li a:hover:after {
-            width: 100%;
-        }
-
-        .header-icons {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .icon-btn {
             background: none;
             border: none;
-            font-size: 1.2rem;
-            color: var(--primary);
             cursor: pointer;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .icon-btn:hover {
-            color: var(--secondary);
-            transform: translateY(-2px);
+            font-size: 1.2rem;
+            color: var(--medium-gray);
         }
 
         .cart-count {
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--accent);
-            color: var(--white);
+            background-color: var(--bronze);
+            color: white;
             font-size: 0.7rem;
             width: 18px;
             height: 18px;
             border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--primary);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        /* SEARCH BAR */
-        .search-container {
-            position: relative;
-        }
-
-        .search-bar {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 300px;
-            background: var(--white);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            z-index: 1001;
-            margin-top: 10px;
-        }
-
-        .search-bar.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid var(--light-gray);
-            border-radius: 25px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-
-        .search-results {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px;
-        }
-
-        .search-result-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            border-bottom: 1px solid var(--light-gray);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .search-result-item:hover {
-            background: var(--light-bg);
-            transform: translateX(5px);
-        }
-
-        .search-result-image {
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .search-result-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .search-result-info {
-            flex: 1;
-        }
-
-        .search-result-title {
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .search-result-price {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-
-        .no-results {
-            padding: 15px;
-            text-align: center;
-            color: var(--gray);
-        }
-
-        /* Language Switcher */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-
-        .language-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--primary);
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: var(--transition);
-        }
-
-        .language-btn:hover {
-            background-color: var(--light-bg);
-            color: var(--secondary);
-        }
-
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--white);
-            box-shadow: var(--shadow);
-            border-radius: 8px;
-            padding: 10px 0;
-            width: 150px;
-            display: none;
-            z-index: 1000;
-            animation: slideDown 0.3s ease;
-        }
-
-        .language-dropdown.active {
-            display: block;
-        }
-
-        .language-option {
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .language-option:hover {
-            background-color: var(--light-bg);
-            color: var(--secondary);
-        }
-
-        .flag-icon {
-            width: 20px;
-            height: 15px;
-            border-radius: 2px;
-            object-fit: cover;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
         /* HERO SECTION */
         .hero {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)),
+                        url('C:\\Users\\aliai_gae0b2z\\Desktop\\Commerce\\Site\\New folder\\Firefly_Ultra luxury product photography of a premium stainless steel bracelet, clean minimal 488806.png') no-repeat center center/cover;
+            margin-top: 70px;
             color: var(--white);
-            margin-top: 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(166, 124, 82, 0.1), rgba(212, 175, 55, 0.1));
-            z-index: 1;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out;
-            position: relative;
-            z-index: 2;
+            max-width: 600px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            transform: translateY(0);
-            box-shadow: 0 5px 20px rgba(166, 124, 82, 0.3);
-            border: none;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* PRODUCT SHOWCASE */
+        .product-showcase {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .product-images {
             position: relative;
-            overflow: hidden;
-            letter-spacing: 0.5px;
         }
 
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .main-image {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: var(--shadow-medium);
         }
 
-        .btn:hover:before {
-            left: 100%;
+        .product-info {
+            padding: 20px;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(166, 124, 82, 0.4);
+        .product-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--black-matte);
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
+        .product-price {
+            margin: 30px 0;
         }
 
-        .btn-outline:hover {
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            color: var(--white);
-            border-color: transparent;
+        .current-price {
+            font-size: 2rem;
+            color: var(--bronze);
+            font-weight: 600;
         }
 
-        .btn-small {
-            padding: 8px 20px;
-            font-size: 0.9rem;
+        .old-price {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            text-decoration: line-through;
+            margin-left: 10px;
         }
 
-        /* COLLECTIONS BUTTON */
-        .collections-btn-section {
-            padding: 40px 0;
-            background: var(--light-bg);
-            text-align: center;
+        .product-features {
+            margin: 30px 0;
         }
 
-        .collections-btn {
-            display: inline-flex;
+        .feature-item {
+            display: flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 30px;
-            background: var(--primary);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+            margin-bottom: 15px;
+            color: var(--medium-gray);
         }
 
-        .collections-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
-            gap: 15px;
+        .feature-item i {
+            color: var(--bronze);
         }
 
-        /* CATEGORIES SECTION */
-        .categories {
-            background-color: var(--light-bg);
-            position: relative;
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .categories:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23A67C52" opacity="0.03"/></svg>');
-            background-size: cover;
-            pointer-events: none;
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--light-gray);
+            border-radius: 2px;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border: none;
+            font-size: 1.1rem;
+            background: none;
+        }
+
+        /* GALLERY SECTION */
+        .gallery {
+            padding: 100px 0;
+            background-color: var(--cream);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 60px;
-            position: relative;
         }
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
-            display: inline-block;
-            position: relative;
-            padding-bottom: 15px;
+            color: var(--black-matte);
+            margin-bottom: 15px;
         }
 
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+        .section-title p {
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
             border-radius: 2px;
+            box-shadow: var(--shadow-soft);
         }
 
-        .gender-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .gender-tab {
-            padding: 12px 30px;
-            background: var(--white);
-            border: 2px solid var(--light-gray);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .gender-tab:hover {
-            border-color: var(--secondary);
-            color: var(--secondary);
-        }
-
-        .gender-tab.active {
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            color: var(--white);
-            border-color: transparent;
-            box-shadow: 0 5px 15px rgba(166, 124, 82, 0.2);
-        }
-
-        .gender-tab i {
-            font-size: 1.2rem;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .category-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .category-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .category-image:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .gallery-item img {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
-            z-index: 1;
-        }
-
-        .category-image img {
-            width: 100%;
-            height: 100%;
+            height: 300px;
             object-fit: cover;
             transition: var(--transition);
         }
 
-        .category-card:hover .category-image img {
-            transform: scale(1.1);
-        }
-
-        .category-content {
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .category-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .category-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--accent);
-            color: var(--white);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        /* PRODUCTS SECTION - BEST SELLERS */
-        .products {
-            background: var(--white);
-            position: relative;
-        }
-
-        .products:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="30" fill="%23D4AF37" opacity="0.03"/></svg>');
-            background-size: cover;
-            pointer-events: none;
-        }
-
-        .best-seller-banner {
-            background: linear-gradient(135deg, var(--accent-light), var(--accent));
-            color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .best-seller-banner h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .best-seller-banner p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-light);
-        }
-
-        .product-card.best-seller {
-            border: var(--best-seller-border);
-            position: relative;
-        }
-
-        .product-card.best-seller:before {
-            content: 'BEST SELLER';
-            position: absolute;
-            top: 20px;
-            left: -10px;
-            background: var(--accent);
-            color: var(--white);
-            padding: 5px 15px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            border-radius: 20px;
-            z-index: 2;
-            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent);
-            color: var(--white);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 2;
-            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
-        }
-
-        .product-image {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-
-        .product-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7));
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding: 20px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-overlay {
-            opacity: 1;
-        }
-
-        .product-actions {
-            display: flex;
-            gap: 15px;
-            transform: translateY(20px);
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-actions {
-            transform: translateY(0);
-        }
-
-        .product-action {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--white);
-            color: var(--primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .product-action:hover {
-            background: var(--secondary);
-            color: var(--white);
-            transform: scale(1.1);
-        }
-
-        .product-content {
-            padding: 20px;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .product-price {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .price {
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 1.3rem;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            font-size: 0.9rem;
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         /* FEATURES SECTION */
         .features {
-            background: linear-gradient(135deg, var(--light-bg), var(--white));
-            position: relative;
-            overflow: hidden;
-        }
-
-        .features:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(166, 124, 82, 0.05) 30%, rgba(212, 175, 55, 0.05) 70%, transparent 70%);
-            transform: rotate(45deg);
+            padding: 100px 0;
+            background-color: var(--white);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
         }
 
         .feature-card {
             text-align: center;
-            padding: 30px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
+            padding: 40px 20px;
         }
 
         .feature-icon {
             font-size: 2.5rem;
+            color: var(--bronze);
             margin-bottom: 20px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
-        /* TESTIMONIALS SECTION */
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* TESTIMONIALS */
         .testimonials {
-            background: linear-gradient(135deg, var(--dark-bg), #222);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
+            padding: 100px 0;
+            background-color: var(--cream);
         }
 
-        .testimonials:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L50,0 L100,100 Z" fill="%23D4AF37" opacity="0.1"/></svg>');
-            background-size: cover;
-        }
-
-        .testimonials .section-title h2 {
-            color: var(--white);
-        }
-
-        .testimonials .section-title h2:after {
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-        }
-
-        .testimonials-slider {
-            max-width: 1000px;
+        .testimonial-slider {
+            max-width: 800px;
             margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .testimonials-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 30px;
-        }
-
-        .testimonial {
-            min-width: calc(33.333% - 20px);
-            padding: 20px;
+            text-align: center;
         }
 
         .testimonial-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 2px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 30px;
+        }
+
+        .testimonial-rating {
+            color: var(--bronze);
             margin-bottom: 20px;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial-content:after {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 4rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary);
-            opacity: 0.3;
-        }
-
-        body.rtl .testimonial-content:after {
-            right: auto;
-            left: 20px;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 15px;
         }
 
         .author-avatar {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--secondary);
-        }
-
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .testimonial-rating {
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        .testimonial-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
-        }
-
-        .testimonial-control {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .testimonial-control.active {
-            background: var(--secondary);
-            transform: scale(1.2);
-        }
-
-        /* NEWSLETTER SECTION */
-        .newsletter {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .newsletter:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="0" cy="100" r="50" fill="white" opacity="0.05"/><circle cx="100" cy="0" r="60" fill="white" opacity="0.05"/></svg>');
-            background-size: cover;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 30px;
-            gap: 10px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            background: var(--white);
         }
 
         /* FOOTER */
         footer {
-            background-color: var(--dark-bg);
+            background-color: var(--black-matte);
             color: var(--white);
-            padding: 60px 0 30px;
-            position: relative;
-        }
-
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
+            padding: 80px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px;
             margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
-            color: var(--secondary);
+            color: var(--bronze-light);
         }
 
         .footer-links {
@@ -1128,72 +420,39 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--light-gray);
             text-decoration: none;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
+            color: var(--bronze-light);
         }
 
-        body.rtl .footer-links a:hover {
-            padding-left: 0;
-            padding-right: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
+        .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid var(--dark-gray);
+            color: var(--medium-gray);
+            font-size: 0.9rem;
         }
 
-        /* CART SIDEBAR */
-        .cart-sidebar {
+        /* CART MODAL */
+        .cart-modal {
             position: fixed;
             top: 0;
             right: -400px;
-            width: 350px;
-            height: 100vh;
-            background: var(--white);
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
+            width: 380px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
-            padding: 20px;
+            z-index: 1001;
+            padding: 30px;
             overflow-y: auto;
-            display: flex;
-            flex-direction: column;
         }
 
-        .cart-sidebar.active {
+        .cart-modal.active {
             right: 0;
         }
 
@@ -1202,28 +461,19 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--light-gray);
         }
 
         .close-cart {
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .close-cart:hover {
-            color: var(--secondary);
-            transform: rotate(90deg);
         }
 
         .cart-items {
             margin-bottom: 30px;
-            flex-grow: 1;
-            overflow-y: auto;
         }
 
         .cart-item {
@@ -1232,84 +482,17 @@
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--light-gray);
-            transition: var(--transition);
-        }
-
-        .cart-item:hover {
-            background: var(--light-bg);
-            padding: 10px;
-            border-radius: 10px;
         }
 
         .cart-item-image {
             width: 80px;
             height: 80px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .cart-item-image img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
+            border-radius: 2px;
         }
 
         .cart-item-details {
             flex: 1;
-        }
-
-        .cart-item-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .cart-item-price {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .cart-item-quantity {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 5px;
-        }
-
-        .cart-item-quantity button {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: var(--light-bg);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .cart-item-quantity button:hover {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .cart-item-quantity span {
-            font-weight: 600;
-        }
-
-        .cart-item-remove {
-            color: var(--gray);
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .cart-item-remove:hover {
-            color: var(--error);
-            transform: scale(1.2);
         }
 
         .cart-total {
@@ -1317,64 +500,7 @@
             justify-content: space-between;
             font-weight: 600;
             font-size: 1.2rem;
-            margin-bottom: 20px;
-            padding-top: 15px;
-            border-top: 1px solid var(--light-gray);
-        }
-
-        /* PROMO CODE */
-        .promo-code {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .promo-code h4 {
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .promo-input-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .promo-input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .promo-btn {
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .promo-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .promo-message {
-            margin-top: 10px;
-            font-size: 0.8rem;
-            min-height: 20px;
-        }
-
-        .promo-success {
-            color: var(--success);
-        }
-
-        .promo-error {
-            color: var(--error);
+            margin: 30px 0;
         }
 
         /* OVERLAY */
@@ -1384,7 +510,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
@@ -1396,408 +522,49 @@
             visibility: visible;
         }
 
-        /* PRODUCT PAGE MODAL */
-        .product-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1002;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .product-modal.active {
-            display: flex;
-        }
-
-        .product-modal-content {
-            background: var(--white);
-            border-radius: 20px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            animation: modalFadeIn 0.5s ease;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .product-main {
+                grid-template-columns: 1fr;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-            z-index: 10;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .close-modal:hover {
-            background: var(--secondary);
-            color: var(--white);
-            transform: rotate(90deg);
-        }
-
-        .product-modal-body {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            padding: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .product-modal-body {
-                flex-direction: row;
-            }
-        }
-
-        .product-modal-images {
-            flex: 1;
-        }
-
-        .product-modal-main-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .product-modal-main-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-modal-info {
-            flex: 1;
-        }
-
-        .product-modal-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .product-modal-price {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .product-modal-description {
-            margin-bottom: 30px;
-            line-height: 1.8;
-            color: var(--gray);
-        }
-
-        .product-modal-features {
-            margin-bottom: 30px;
-        }
-
-        .product-modal-features h4 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .product-modal-features ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-
-        .product-modal-features li {
-            margin-bottom: 8px;
-            position: relative;
-            color: var(--gray);
-        }
-
-        .product-modal-features li:before {
-            content: "•";
-            color: var(--secondary);
-            font-weight: bold;
-            position: absolute;
-            left: -15px;
-        }
-
-        body.rtl .product-modal-features li:before {
-            left: auto;
-            right: -15px;
-        }
-
-        .product-modal-quantity {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--light-gray);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .quantity-btn {
-            width: 40px;
-            height: 40px;
-            background: var(--light-bg);
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .quantity-btn:hover {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .quantity-input {
-            width: 60px;
-            height: 40px;
-            border: none;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            background: var(--white);
-        }
-
-        /* CATALOG PAGE STYLES */
-        .catalog-page {
-            padding-top: 120px;
-            min-height: 100vh;
-            background: var(--light-bg);
-            display: none;
-        }
-
-        .catalog-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .catalog-filters {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 10px 25px;
-            background: var(--white);
-            border: 2px solid var(--light-gray);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover {
-            border-color: var(--secondary);
-            color: var(--secondary);
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            color: var(--white);
-            border-color: transparent;
-        }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* MEDIA QUERIES - VERSION MOBILE */
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--white);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: var(--transition);
-                gap: 30px;
-                z-index: 999;
-                padding: 20px;
+                display: none;
             }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
-
-            .newsletter-form {
-                flex-direction: column;
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
-
-            .cart-sidebar {
-                width: 300px;
+            
+            .features-grid {
+                grid-template-columns: 1fr;
             }
-
-            .product-modal-body {
-                flex-direction: column;
-            }
-
-            .testimonial {
-                min-width: 100%;
-            }
-
-            .search-bar {
-                width: 250px;
-                right: -50px;
-            }
-
-            .product-card.best-seller:before {
-                font-size: 0.6rem;
-                padding: 3px 10px;
-                left: -5px;
-            }
-        }
-
-        /* MEDIA QUERIES - VERSION PC */
-        @media (min-width: 901px) {
-            .hero-content {
-                text-align: left;
-                margin: 0;
-            }
-
+            
             .hero-buttons {
-                display: flex;
-                gap: 20px;
+                flex-direction: column;
             }
-        }
-
-        /* RTL SUPPORT */
-        body.rtl .nav-links li a:after {
-            left: auto;
-            right: 0;
-        }
-
-        body.rtl .section-title h2:after {
-            left: auto;
-            right: 50%;
-            transform: translateX(50%);
-        }
-
-        body.rtl .testimonial-content:after {
-            left: 20px;
-            right: auto;
-        }
-
-        body.rtl .footer-links a:hover {
-            padding-left: 0;
-            padding-right: 5px;
-        }
-
-        /* CATALOG LINK STYLES */
-        .catalog-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* COLLECTIONS PAGE */
-        .collections-hero {
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1519415711931-702deacf5be8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
-            color: var(--white);
-            text-align: center;
-            margin-top: 70px;
-        }
-
-        .collections-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .collections-container {
-            padding: 80px 0;
-            background: var(--light-bg);
+            
+            .cart-modal {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -1805,1183 +572,368 @@
     <!-- HEADER -->
     <header>
         <div class="container header-container">
-            <a href="#home" class="logo" id="home-logo">
-                <div class="logo-img">
-                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Firefly_Create a refined jewelry brand logo inspired by spiritual and Islamic geometric eleme 291153.png" alt="YUANUAME Logo">
-                </div>
-                <div>
-                    <div class="logo-text">YUANUAME</div>
-                    <div class="logo-subtitle">POUT BRAND HMIER</div>
-                </div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#categories">Collections</a></li>
-                <li><a href="#products">Best Sellers</a></li>
-                <li><a href="#testimonials">Avis Clients</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="header-icons">
-                <div class="search-container">
-                    <button class="icon-btn" id="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <div class="search-bar" id="search-bar">
-                        <input type="text" class="search-input" placeholder="Rechercher un produit..." id="search-input">
-                        <div class="search-results" id="search-results"></div>
-                    </div>
-                </div>
-                <div class="language-switcher">
-                    <button class="language-btn">
-                        <i class="fas fa-globe"></i> FR
-                    </button>
-                    <div class="language-dropdown">
-                        <div class="language-option" data-lang="fr">
-                            <img src="https://flagcdn.com/w20/fr.png" class="flag-icon" alt="FR"> Français
-                        </div>
-                        <div class="language-option" data-lang="en">
-                            <img src="https://flagcdn.com/w20/us.png" class="flag-icon" alt="EN"> English
-                        </div>
-                        <div class="language-option" data-lang="ar">
-                            <img src="https://flagcdn.com/w20/ma.png" class="flag-icon" alt="AR"> العربية
-                        </div>
-                    </div>
-                </div>
-                <button class="icon-btn">
-                    <i class="fas fa-user"></i>
-                </button>
-                <button class="icon-btn" id="cart-btn">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </button>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+            <a href="#" class="logo">YUANUAME</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#product">Le Produit</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#features">Caractéristiques</a></li>
+                    <li><a href="#testimonials">Avis</a></li>
+                </ul>
+            </nav>
+            <button class="cart-btn" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </button>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1 data-lang-key="hero-title">L'Élégance Intemporelle</h1>
-            <p data-lang-key="hero-subtitle">L'artisanat d'exception rencontre le design contemporain. Des pièces uniques créées avec passion.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn" data-lang-key="hero-btn1">Découvrir les Best Sellers</a>
-                <a href="#collections-btn" class="btn btn-outline" data-lang-key="hero-btn2">Voir nos collections</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bracelet Acier Premium</h1>
+                <p>Élégance mat, design minimaliste. Un accessoire qui redéfinit le luxe contemporain.</p>
+                <div class="hero-buttons">
+                    <a href="#product" class="btn">Découvrir</a>
+                    <a href="#product" class="btn btn-secondary">Voir le prix</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- COLLECTIONS BUTTON SECTION -->
-    <section class="collections-btn-section" id="collections-btn">
-        <div class="container text-center">
-            <a href="#catalog" class="collections-btn catalog-link">
-                <i class="fas fa-gem"></i>
-                <span data-lang-key="view-collections-btn">Explorer toutes nos collections</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
+    <!-- PRODUCT SHOWCASE -->
+    <section class="product-showcase" id="product">
+        <div class="container">
+            <div class="product-main">
+                <div class="product-images">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Luxury bracelet floating in mid-air, cinematic lighting, dramatic shadows, premium fa 524950.png" 
+                         alt="Bracelet Acier Premium" class="main-image">
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Bracelet Acier Premium</h1>
+                    <p class="product-description">
+                        Un bracelet en acier inoxydable 316L qui allie design minimaliste et qualité exceptionnelle. 
+                        Fabriqué avec précision, il offre un confort optimal et une durabilité à toute épreuve.
+                    </p>
+                    
+                    <div class="product-price">
+                        <span class="current-price">179 DH</span>
+                        <span class="old-price">199 DH</span>
+                    </div>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Acier inoxydable 316L</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Finition mat premium</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ajustable 16-22 cm</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Résistant à l'eau</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <span>Quantité:</span>
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn" style="width: 100%; padding: 15px;" id="add-to-cart-main">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier - 179 DH
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CATEGORIES SECTION -->
-    <section class="categories" id="categories">
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2 data-lang-key="categories-title">Nos Catégories</h2>
+                <h2>Galerie Exclusive</h2>
+                <p>Découvrez notre bracelet sous différents angles et environnements</p>
             </div>
             
-            <div class="gender-tabs">
-                <div class="gender-tab active" data-gender="all">
-                    <i class="fas fa-users"></i> <span data-lang-key="all-gender">Tous</span>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Gemini Flash_Modern luxury bracelet photography for Instagram, minimal composition, dark background 707527.png" alt="Design minimaliste">
                 </div>
-                <div class="gender-tab" data-gender="men">
-                    <i class="fas fa-mars"></i> <span data-lang-key="men-gender">Homme</span>
+                <div class="gallery-item">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Gemini Flash_Luxury metal bracelet interacting with natural elements (stone, smoke, water drops) 707527.png" alt="Éléments naturels">
                 </div>
-                <div class="gender-tab" data-gender="women">
-                    <i class="fas fa-venus"></i> <span data-lang-key="women-gender">Femme</span>
+                <div class="gallery-item">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Gemini Flash_Luxury jewelry composition with two premium bracelets (silver and black), elegant symmetry 707527.png" alt="Symétrie élégante">
                 </div>
-            </div>
-            
-            <div class="categories-grid">
-                <a href="#products" class="category-card animate-on-scroll" data-gender="men" data-category="bracelets">
-                    <div class="category-badge">Homme</div>
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Bracelets Hommes">
-                    </div>
-                    <div class="category-content">
-                        <h3 data-lang-key="category-men-bracelets">Bracelets Hommes</h3>
-                        <div class="btn btn-outline btn-small" data-lang-key="explore-btn">Voir</div>
-                    </div>
-                </a>
-                
-                <a href="#products" class="category-card animate-on-scroll" data-gender="women" data-category="bracelets">
-                    <div class="category-badge">Femme</div>
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Bracelets Femmes">
-                    </div>
-                    <div class="category-content">
-                        <h3 data-lang-key="category-women-bracelets">Bracelets Femmes</h3>
-                        <div class="btn btn-outline btn-small" data-lang-key="explore-btn">Voir</div>
-                    </div>
-                </a>
-                
-                <a href="#products" class="category-card animate-on-scroll" data-gender="women" data-category="rings">
-                    <div class="category-badge">Femme</div>
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Bagues">
-                    </div>
-                    <div class="category-content">
-                        <h3 data-lang-key="category-rings">Bagues</h3>
-                        <div class="btn btn-outline btn-small" data-lang-key="explore-btn">Voir</div>
-                    </div>
-                </a>
-                
-                <a href="#products" class="category-card animate-on-scroll" data-gender="women" data-category="necklaces">
-                    <div class="category-badge">Femme</div>
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Colliers">
-                    </div>
-                    <div class="category-content">
-                        <h3 data-lang-key="category-necklaces">Colliers</h3>
-                        <div class="btn btn-outline btn-small" data-lang-key="explore-btn">Voir</div>
-                    </div>
-                </a>
-                
-                <a href="#products" class="category-card animate-on-scroll" data-gender="men" data-category="chains">
-                    <div class="category-badge">Homme</div>
-                    <div class="category-image">
-                        <img src="https://ellenbijoux.com/wp-content/uploads/2024/12/chaines-pour-homme.webp" alt="Chaînes Hommes">
-                    </div>
-                    <div class="category-content">
-                        <h3 data-lang-key="category-men-chains">Chaînes Hommes</h3>
-                        <div class="btn btn-outline btn-small" data-lang-key="explore-btn">Voir</div>
-                    </div>
-                </a>
-                
-                <a href="#products" class="category-card animate-on-scroll" data-gender="women" data-category="earrings">
-                    <div class="category-badge">Femme</div>
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Boucles d'oreilles">
-                    </div>
-                    <div class="category-content">
-                        <h3 data-lang-key="category-earrings">Boucles d'Oreilles</h3>
-                        <div class="btn btn-outline btn-small" data-lang-key="explore-btn">Voir</div>
-                    </div>
-                </a>
+                <div class="gallery-item">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Gemini Flash_Luxury bracelet placed in a modern architectural environment, strong lines, shadows 707527.png" alt="Architecture moderne">
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Gemini Flash_High-end bracelet photography inspired by luxury Swiss watch brands, dramatic lighting 707527.png" alt="Éclairage dramatique">
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\Site\New folder\Firefly_Gemini Flash_Creative luxury bracelet floating inside a cinematic environment, abstract shapes 707527.png" alt="Environnement cinématique">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTS SECTION - BEST SELLERS -->
-    <section class="products" id="products">
+    <!-- FEATURES -->
+    <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2 data-lang-key="products-title">Nos Best Sellers</h2>
+                <h2>Caractéristiques Premium</h2>
+                <p>Découvrez ce qui rend ce bracelet exceptionnel</p>
             </div>
             
-            <div class="best-seller-banner">
-                <h3>⭐ Les Préférés de Nos Clients</h3>
-                <p>Découvrez les pièces les plus appréciées, alliant qualité exceptionnelle et design raffiné</p>
-            </div>
-            
-            <div class="products-grid">
-                <!-- Produit 1 - BEST SELLER -->
-                <div class="product-card animate-on-scroll best-seller" data-product-id="1" data-gender="men" data-category="bracelets">
-                    <div class="product-badge" data-lang-key="new-badge">Nouveau</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Bracelet Cuir Homme">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title" data-lang-key="product1-title">Bracelet Cuir Artisanal</h3>
-                        <div class="product-price">
-                            <span class="price">249 MAD</span>
-                            <span class="old-price">299 MAD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produit 2 - BEST SELLER -->
-                <div class="product-card animate-on-scroll best-seller" data-product-id="2" data-gender="women" data-category="bracelets">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Bracelet Perles Femme">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title" data-lang-key="product2-title">Bracelet Perles Élégant</h3>
-                        <div class="product-price">
-                            <span class="price">199 MAD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produit 3 -->
-                <div class="product-card animate-on-scroll" data-product-id="3" data-gender="women" data-category="rings">
-                    <div class="product-badge" data-lang-key="sale-badge">Promo</div>
-                    <div class="product-image">
-                        <img src="C:\Users\aliai_gae0b2z\Desktop\Commerce\WechatIMG6426_af6e81b8-4da0-4781-9f68-eb3e356110da.webp" alt="Bague Argent">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title" data-lang-key="product3-title">Bague Argent 925</h3>
-                        <div class="product-price">
-                            <span class="price">349 MAD</span>
-                            <span class="old-price">399 MAD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produit 4 -->
-                <div class="product-card animate-on-scroll" data-product-id="4" data-gender="all" data-category="bracelets">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Set Bracelet">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title" data-lang-key="product4-title">Set Bracelet Couple</h3>
-                        <div class="product-price">
-                            <span class="price">449 MAD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produit 5 - BEST SELLER -->
-                <div class="product-card animate-on-scroll best-seller" data-product-id="5" data-gender="women" data-category="necklaces">
-                    <div class="product-badge" data-lang-key="new-badge">Nouveau</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Collier Or">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title" data-lang-key="product5-title">Collier Or 18K</h3>
-                        <div class="product-price">
-                            <span class="price">799 MAD</span>
-                            <span class="old-price">899 MAD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produit 6 -->
-                <div class="product-card animate-on-scroll" data-product-id="6" data-gender="women" data-category="earrings">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Boucles d'oreilles">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title" data-lang-key="product6-title">Boucles d'Oreilles Diamant</h3>
-                        <div class="product-price">
-                            <span class="price">599 MAD</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 50px;">
-                <a href="#catalog" class="btn catalog-link" data-lang-key="view-all-btn">Voir tout le catalogue</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="features">
-        <div class="container">
             <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 data-lang-key="feature1-title">Livraison Rapide</h3>
-                    <p data-lang-key="feature1-desc">Expédition sous 24h partout au Maroc</p>
+                    <h3>Qualité Supérieure</h3>
+                    <p>Acier 316L de qualité chirurgicale, résistant à la corrosion et aux allergies</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-ruler-combined"></i>
                     </div>
-                    <h3 data-lang-key="feature2-title">Paiement Sécurisé</h3>
-                    <p data-lang-key="feature2-desc">Transactions cryptées et sécurisées</p>
+                    <h3>Ajustement Parfait</h3>
+                    <p>Système d'ajustement précis pour un confort optimal toute la journée</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
+                        <i class="fas fa-tint"></i>
                     </div>
-                    <h3 data-lang-key="feature3-title">Retours Gratuits</h3>
-                    <p data-lang-key="feature3-desc">30 jours pour changer d'avis</p>
+                    <h3>Résistance à l'Eau</h3>
+                    <p>Résiste à l'eau jusqu'à 5 ATM, idéal pour un usage quotidien</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-award"></i>
                     </div>
-                    <h3 data-lang-key="feature4-title">Qualité Premium</h3>
-                    <p data-lang-key="feature4-desc">Matériaux de haute qualité garantis</p>
+                    <h3>Garantie 2 Ans</h3>
+                    <p>Garantie fabricant complète sur tous les défauts de matériel</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2 data-lang-key="testimonials-title">Ce que disent nos clients</h2>
+                <h2>Avis Clients</h2>
+                <p>Ce que disent nos clients satisfaits</p>
             </div>
-            <div class="testimonials-slider">
-                <div class="testimonials-track" id="testimonials-track">
-                    <!-- Les témoignages seront ajoutés dynamiquement -->
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"La qualité est exceptionnelle. Le bracelet a un poids parfait et la finition mat est vraiment élégante. Je le recommande vivement !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <div>
+                            <h4>Karim T.</h4>
+                            <p>Casablanca</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-controls" id="testimonial-controls">
-                    <!-- Les contrôles seront ajoutés dynamiquement -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEWSLETTER SECTION -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2 data-lang-key="newsletter-title">Restez informé</h2>
-                <p data-lang-key="newsletter-desc">Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives et nouveautés</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Votre adresse email" data-lang-key="newsletter-placeholder">
-                    <button type="submit" class="btn" data-lang-key="newsletter-btn">S'inscrire</button>
-                </form>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>YUANUAME</h3>
-                    <p data-lang-key="footer-desc">Créateur de bijoux artisanaux de luxe qui allient tradition ancestrale et design contemporain.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <p style="color: var(--light-gray); margin-top: 15px;">
+                        Créateur d'accessoires premium qui allient design minimaliste et qualité exceptionnelle.
+                    </p>
                 </div>
                 <div class="footer-column">
-                    <h3 data-lang-key="footer-nav-title">Navigation</h3>
+                    <h3>Navigation</h3>
                     <ul class="footer-links">
-                        <li><a href="#home" data-lang-key="nav-home">Accueil</a></li>
-                        <li><a href="#categories" data-lang-key="nav-collections">Collections</a></li>
-                        <li><a href="#products" data-lang-key="nav-shop">Best Sellers</a></li>
-                        <li><a href="#testimonials" data-lang-key="nav-testimonials">Avis Clients</a></li>
-                        <li><a href="#contact" data-lang-key="nav-contact">Contact</a></li>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#product">Le Produit</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#features">Caractéristiques</a></li>
+                        <li><a href="#testimonials">Avis</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3 data-lang-key="footer-info-title">Informations</h3>
+                    <h3>Informations</h3>
                     <ul class="footer-links">
-                        <li><a href="#" data-lang-key="info-delivery">Livraison & Retours</a></li>
-                        <li><a href="#" data-lang-key="info-sizes">Guide des tailles</a></li>
-                        <li><a href="#" data-lang-key="info-care">Soin des bijoux</a></li>
-                        <li><a href="#" data-lang-key="info-privacy">Politique de confidentialité</a></li>
-                        <li><a href="#" data-lang-key="info-terms">Conditions générales</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Guide des tailles</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3 data-lang-key="footer-contact-title">Contact</h3>
+                    <h3>Contact</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Avenue Mohammed V, Casablanca</li>
-                        <li><i class="fas fa-phone"></i> +212 5 22 33 44 55</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Casablanca, Maroc</li>
+                        <li><i class="fas fa-phone"></i> +212 5 XX XX XX XX</li>
                         <li><i class="fas fa-envelope"></i> contact@yuanuame.ma</li>
-                        <li><i class="fas fa-clock"></i> Lundi - Vendredi: 9h - 18h</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 YUANUAME - POUT BRAND HMIER. <span data-lang-key="footer-rights">Tous droits réservés.</span></p>
+            
+            <div class="copyright">
+                <p>&copy; 2024 YUANUAME. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- CATALOG PAGE -->
-    <section id="catalog" class="catalog-page">
-        <div class="collections-hero">
-            <div class="container">
-                <h1>Toutes Nos Collections</h1>
-                <p>Explorez notre gamme complète de bijoux artisanaux</p>
-            </div>
-        </div>
-        
-        <div class="collections-container">
-            <div class="container">
-                <div class="catalog-filters">
-                    <button class="filter-btn active" data-filter="all" data-lang-key="filter-all">Tous</button>
-                    <button class="filter-btn" data-filter="men" data-lang-key="filter-men">Homme</button>
-                    <button class="filter-btn" data-filter="women" data-lang-key="filter-women">Femme</button>
-                    <button class="filter-btn" data-filter="bracelets" data-lang-key="filter-bracelets">Bracelets</button>
-                    <button class="filter-btn" data-filter="rings" data-lang-key="filter-rings">Bagues</button>
-                    <button class="filter-btn" data-filter="necklaces" data-lang-key="filter-necklaces">Colliers</button>
-                    <button class="filter-btn" data-filter="earrings" data-lang-key="filter-earrings">Boucles d'oreilles</button>
-                </div>
-                
-                <div class="catalog-grid" id="catalog-grid">
-                    <!-- Les produits du catalogue seront ajoutés dynamiquement -->
-                </div>
-                
-                <div class="text-center">
-                    <a href="#home" class="btn" data-lang-key="back-to-home">Retour à l'accueil</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCT MODAL -->
-    <div class="product-modal">
-        <div class="product-modal-content">
-            <button class="close-modal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="product-modal-body">
-                <div class="product-modal-images">
-                    <div class="product-modal-main-image">
-                        <img id="modal-product-image" src="" alt="">
-                    </div>
-                </div>
-                <div class="product-modal-info">
-                    <h2 id="modal-product-title" class="product-modal-title"></h2>
-                    <div id="modal-product-price" class="product-modal-price"></div>
-                    <p id="modal-product-description" class="product-modal-description"></p>
-                    
-                    <div class="product-modal-features">
-                        <h4 data-lang-key="features-title">Caractéristiques</h4>
-                        <ul id="modal-product-features"></ul>
-                    </div>
-                    
-                    <div class="product-modal-quantity">
-                        <span data-lang-key="quantity-label">Quantité:</span>
-                        <div class="quantity-control">
-                            <button class="quantity-btn minus">-</button>
-                            <input type="number" class="quantity-input" value="1" min="1" max="10">
-                            <button class="quantity-btn plus">+</button>
-                        </div>
-                    </div>
-                    
-                    <button id="modal-add-to-cart" class="btn" style="width: 100%; padding: 15px;">
-                        <i class="fas fa-shopping-cart"></i> <span data-lang-key="add-to-cart">Ajouter au panier</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CART SIDEBAR -->
-    <div class="cart-sidebar">
+    <!-- CART MODAL -->
+    <div class="cart-modal" id="cart-modal">
         <div class="cart-header">
-            <h3 data-lang-key="cart-title">Votre Panier</h3>
-            <button class="close-cart">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="close-cart">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div class="cart-items">
-            <!-- Cart items will be added dynamically -->
-        </div>
         
-        <!-- Promo Code Section -->
-        <div class="promo-code">
-            <h4 data-lang-key="promo-title">Code Promotionnel</h4>
-            <div class="promo-input-group">
-                <input type="text" class="promo-input" placeholder="Entrez votre code" id="promo-input" data-lang-key="promo-placeholder">
-                <button class="promo-btn" id="apply-promo" data-lang-key="promo-btn">Appliquer</button>
-            </div>
-            <div class="promo-message" id="promo-message"></div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be added here -->
         </div>
         
         <div class="cart-total">
-            <span data-lang-key="cart-total">Total:</span>
-            <span id="cart-total-price">0 MAD</span>
+            <span>Total:</span>
+            <span id="cart-total-price">0 DH</span>
         </div>
-        <button class="btn" style="width: 100%;" data-lang-key="cart-checkout">Commander</button>
+        
+        <button class="btn" style="width: 100%;">Commander</button>
     </div>
 
     <!-- OVERLAY -->
-    <div class="overlay"></div>
+    <div class="overlay" id="overlay"></div>
 
     <script>
-        // Menu mobile
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const overlay = document.querySelector('.overlay');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
-
-        // Cart functionality
+        // Simple cart system
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartModal = document.getElementById('cart-modal');
+        const overlay = document.getElementById('overlay');
         const cartBtn = document.getElementById('cart-btn');
-        const cartSidebar = document.querySelector('.cart-sidebar');
-        const closeCart = document.querySelector('.close-cart');
-        const productModal = document.querySelector('.product-modal');
-        const closeModal = document.querySelector('.close-modal');
-        const homeLogo = document.getElementById('home-logo');
-
-        // Logo click redirects to home
-        homeLogo.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.querySelectorAll('section:not(.catalog-page)').forEach(section => {
-                section.style.display = 'block';
-            });
-            document.getElementById('catalog').style.display = 'none';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        cartBtn.addEventListener('click', () => {
-            cartSidebar.classList.add('active');
-            overlay.classList.add('active');
-        });
-
-        closeCart.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        closeModal.addEventListener('click', () => {
-            productModal.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        overlay.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            productModal.classList.remove('active');
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-            overlay.classList.remove('active');
-            searchBar.classList.remove('active');
-            languageDropdown.classList.remove('active');
-        });
-
-        // Animation au défilement
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // Fermer le menu mobile en cliquant sur un lien
-        document.querySelectorAll('.nav-links a, .footer-links a[href^="#"]').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-        });
-
-        // Animation fluide pour les ancres
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                
-                if (targetId === '#catalog') {
-                    // Afficher la page catalogue et masquer les autres sections
-                    document.querySelectorAll('section:not(.catalog-page)').forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    document.getElementById('catalog').style.display = 'block';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    return;
-                } else if (targetId === '#home') {
-                    // Retour à l'accueil
-                    document.querySelectorAll('section').forEach(section => {
-                        section.style.display = 'block';
-                    });
-                    document.getElementById('catalog').style.display = 'none';
-                }
-                
-                const target = document.querySelector(targetId);
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        const closeCartBtn = document.getElementById('close-cart');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const cartCount = document.querySelector('.cart-count');
+        const addToCartBtn = document.getElementById('add-to-cart-main');
+        const quantityInput = document.querySelector('.quantity-input');
+        const minusBtn = document.querySelector('.minus');
+        const plusBtn = document.querySelector('.plus');
 
         // Product data
-        const products = {
-            1: {
-                id: 1,
-                title: "Bracelet Cuir Artisanal",
-                titleEn: "Artisan Leather Bracelet",
-                titleAr: "سوار جلد حرفي",
-                price: 249,
-                oldPrice: 299,
-                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                description: "Ce bracelet en cuir véritable est fabriqué à la main par nos artisans marocains. Chaque pièce est unique et témoigne d'un savoir-faire ancestral.",
-                descriptionEn: "This genuine leather bracelet is handmade by our Moroccan artisans. Each piece is unique and testifies to ancestral know-how.",
-                descriptionAr: "هذا السوار المصنوع من الجلد الحقيقي مصنوع يدويًا من قبل حرفييننا المغاربة. كل قطعة فريدة من نوعها وتدل على المعرفة التقليدية.",
-                features: [
-                    "Cuir véritable de haute qualité",
-                    "Fermoir en argent 925",
-                    "Fait main au Maroc",
-                    "Ajustable à toutes les tailles",
-                    "Garantie 2 ans"
-                ],
-                featuresEn: [
-                    "High quality genuine leather",
-                    "925 silver clasp",
-                    "Handmade in Morocco",
-                    "Adjustable to all sizes",
-                    "2 year warranty"
-                ],
-                featuresAr: [
-                    "جلد حقيقي عالي الجودة",
-                    "قفل من الفضة 925",
-                    "صنع يدوي في المغرب",
-                    "قابل للتعديل لجميع المقاسات",
-                    "ضمان لمدة سنتين"
-                ],
-                gender: "men",
-                category: "bracelets",
-                bestSeller: true
-            },
-            2: {
-                id: 2,
-                title: "Bracelet Perles Élégant",
-                titleEn: "Elegant Pearl Bracelet",
-                titleAr: "سوار لؤلؤ أنيق",
-                price: 199,
-                oldPrice: null,
-                image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                description: "Bracelet délicat orné de perles naturelles et de finitions en argent. Un accessoire parfait pour sublimer votre style quotidien.",
-                descriptionEn: "Delicate bracelet adorned with natural pearls and silver finishes. A perfect accessory to enhance your daily style.",
-                descriptionAr: "سوار رقيق مزين باللؤلؤ الطبيعي وإنهاءات فضية. إكسسوار مثالي لإبراز أسلوبك اليومي.",
-                features: [
-                    "Perles naturelles de qualité",
-                    "Chaîne en argent plaqué or",
-                    "Longueur ajustable",
-                    "Idéal pour les occasions spéciales",
-                    "Livré dans une boîte cadeau"
-                ],
-                featuresEn: [
-                    "Quality natural pearls",
-                    "Gold plated silver chain",
-                    "Adjustable length",
-                    "Ideal for special occasions",
-                    "Delivered in a gift box"
-                ],
-                featuresAr: [
-                    "لؤلؤ طبيعي عالي الجودة",
-                    "سلسلة فضية مطلية بالذهب",
-                    "طول قابل للتعديل",
-                    "مثالي للمناسبات الخاصة",
-                    "يتم تسليمه في صندوق هدية"
-                ],
-                gender: "women",
-                category: "bracelets",
-                bestSeller: true
-            },
-            3: {
-                id: 3,
-                title: "Bague Argent 925",
-                titleEn: "Silver Ring 925",
-                titleAr: "خاتم فضة 925",
-                price: 349,
-                oldPrice: 399,
-                image: "https://images.unsplash.com/photo-1519415711931-702deacf5be8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                description: "Bague en argent sterling 925 avec motif traditionnel marocain gravé à la main. Un bijou intemporel qui s'accorde avec toutes les tenues.",
-                descriptionEn: "925 sterling silver ring with hand-engraved traditional Moroccan motif. A timeless piece of jewelry that goes with all outfits.",
-                descriptionAr: "خاتم من الفضة الإسترلينية 925 مع نقش تقليدي مغربي منحوت يدويًا. قطعة مجوهرات خالدة تناسب جميع الملابس.",
-                features: [
-                    "Argent sterling 925",
-                    "Gravure main traditionnelle",
-                    "Disponible en plusieurs tailles",
-                    "Patine naturelle au fil du temps",
-                    "Certificat d'authenticité"
-                ],
-                featuresEn: [
-                    "925 sterling silver",
-                    "Traditional hand engraving",
-                    "Available in several sizes",
-                    "Natural patina over time",
-                    "Certificate of authenticity"
-                ],
-                featuresAr: [
-                    "فضة إسترلينية 925",
-                    "نقش يدوي تقليدي",
-                    "متوفر بعدة مقاسات",
-                    "صدى طبيعي مع مرور الوقت",
-                    "شهادة أصالة"
-                ],
-                gender: "women",
-                category: "rings",
-                bestSeller: false
-            },
-            4: {
-                id: 4,
-                title: "Set Bracelet Couple",
-                titleEn: "Couple Bracelet Set",
-                titleAr: "مجموعة أساور للزوجين",
-                price: 449,
-                oldPrice: null,
-                image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-                description: "Set de bracelets assortis pour couple, symbolisant l'union et la complicité. Chaque bracelet porte une inscription secrète.",
-                descriptionEn: "Matching bracelet set for couples, symbolizing union and complicity. Each bracelet bears a secret inscription.",
-                descriptionAr: "مجموعة أساور متطابقة للأزواج، ترمز إلى الاتحاد والتفاهم. كل سوار يحمل نقشًا سريًا.",
-                features: [
-                    "Set couple assorti",
-                    "Inscription personnalisable",
-                    "Cuir et métal combinés",
-                    "Boîte cadeau duo",
-                    "Idéal pour les cadeaux"
-                ],
-                featuresEn: [
-                    "Matching couple set",
-                    "Customizable inscription",
-                    "Combined leather and metal",
-                    "Duo gift box",
-                    "Ideal for gifts"
-                ],
-                featuresAr: [
-                    "مجموعة أزواج متطابقة",
-                    "نقش قابل للتخصيص",
-                    "مزيج من الجلد والمعدن",
-                    "صندوق هدية مزدوج",
-                    "مثالي للهدايا"
-                ],
-                gender: "all",
-                category: "bracelets",
-                bestSeller: false
-            },
-            5: {
-                id: 5,
-                title: "Collier Or 18K",
-                titleEn: "18K Gold Necklace",
-                titleAr: "قلادة ذهب 18 قيراط",
-                price: 799,
-                oldPrice: 899,
-                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-                description: "Collier en or 18 carats avec pendentif en forme de main de Fatima, symbole de protection dans la culture marocaine.",
-                descriptionEn: "18 carat gold necklace with Fatima hand-shaped pendant, a symbol of protection in Moroccan culture.",
-                descriptionAr: "قلادة من الذهب عيار 18 قيراط مع قلادة على شكل يد فاطمة، رمز الحماية في الثقافة المغربية.",
-                features: [
-                    "Or 18 carats",
-                    "Pendentif main de Fatima",
-                    "Longueur chaîne 45 cm",
-                    "Fermoir sécurisé",
-                    "Certificat d'authenticité"
-                ],
-                featuresEn: [
-                    "18 carat gold",
-                    "Fatima hand pendant",
-                    "Chain length 45 cm",
-                    "Secure clasp",
-                    "Certificate of authenticity"
-                ],
-                featuresAr: [
-                    "ذهب عيار 18 قيراط",
-                    "قلادة على شكل يد فاطمة",
-                    "طول السلسلة 45 سم",
-                    "قفل آمن",
-                    "شهادة أصالة"
-                ],
-                gender: "women",
-                category: "necklaces",
-                bestSeller: true
-            },
-            6: {
-                id: 6,
-                title: "Boucles d'Oreilles Diamant",
-                titleEn: "Diamond Earrings",
-                titleAr: "أقراط ماسية",
-                price: 599,
-                oldPrice: null,
-                image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-                description: "Boucles d'oreilles en argent avec incrustations de diamants. Un bijou raffiné qui apporte une touche de luminosité à votre visage.",
-                descriptionEn: "Silver earrings with diamond inlays. A refined piece of jewelry that adds a touch of brightness to your face.",
-                descriptionAr: "أقراط فضية مع ترصيع الماس. قطعة مجوهرات أنيقة تضيف لمسة من الإشراقة إلى وجهك.",
-                features: [
-                    "Argent 925 et diamants",
-                    "Monture anti-allergique",
-                    "Poids léger pour un confort optimal",
-                    "Idéales pour tous les jours",
-                    "Écrin de velours inclus"
-                ],
-                featuresEn: [
-                    "925 silver and diamonds",
-                    "Hypoallergenic mount",
-                    "Light weight for optimal comfort",
-                    "Ideal for everyday wear",
-                    "Velvet case included"
-                ],
-                featuresAr: [
-                    "فضة 925 وألماس",
-                    "تركيب مضاد للحساسية",
-                    "وزن خفيف للراحة المثلى",
-                    "مثالي للارتداء اليومي",
-                    "علبة مخملية مشمولة"
-                ],
-                gender: "women",
-                category: "earrings",
-                bestSeller: false
-            },
-            7: {
-                id: 7,
-                title: "Chaîne Argent Homme",
-                titleEn: "Men's Silver Chain",
-                titleAr: "سلسلة فضية للرجال",
-                price: 399,
-                oldPrice: null,
-                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                description: "Chaîne en argent massif pour homme, robuste et élégante. Parfaite pour un style moderne et sophistiqué.",
-                descriptionEn: "Solid silver chain for men, robust and elegant. Perfect for a modern and sophisticated style.",
-                descriptionAr: "سلسلة فضية صلبة للرجال، قوية وأنيقة. مثالية لأسلوب عصري وراقي.",
-                features: [
-                    "Argent massif 925",
-                    "Longueur 50 cm",
-                    "Fermoir sécurisé",
-                    "Résistant à l'eau",
-                    "Entretien facile"
-                ],
-                featuresEn: [
-                    "925 solid silver",
-                    "Length 50 cm",
-                    "Secure clasp",
-                    "Water resistant",
-                    "Easy maintenance"
-                ],
-                featuresAr: [
-                    "فضة صلبة 925",
-                    "الطول 50 سم",
-                    "قفل آمن",
-                    "مقاوم للماء",
-                    "صيانة سهلة"
-                ],
-                gender: "men",
-                category: "necklaces",
-                bestSeller: false
-            },
-            8: {
-                id: 8,
-                title: "Bracelet Sport Homme",
-                titleEn: "Men's Sports Bracelet",
-                titleAr: "سوار رياضي للرجال",
-                price: 179,
-                oldPrice: 199,
-                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                description: "Bracelet sport en silicone avec inserts métalliques. Léger, confortable et résistant à l'eau.",
-                descriptionEn: "Silicone sports bracelet with metal inserts. Lightweight, comfortable and water resistant.",
-                descriptionAr: "سوار رياضي من السليكون مع إدخالات معدنية. خفيف الوزن، مريح ومقاوم للماء.",
-                features: [
-                    "Silicone de qualité",
-                    "Inserts en acier inoxydable",
-                    "Résistant à l'eau",
-                    "Ajustement parfait",
-                    "Léger et confortable"
-                ],
-                featuresEn: [
-                    "Quality silicone",
-                    "Stainless steel inserts",
-                    "Water resistant",
-                    "Perfect fit",
-                    "Light and comfortable"
-                ],
-                featuresAr: [
-                    "سيليكون عالي الجودة",
-                    "إدخالات من الفولاذ المقاوم للصدأ",
-                    "مقاوم للماء",
-                    "ملاءمة مثالية",
-                    "خفيف ومريح"
-                ],
-                gender: "men",
-                category: "bracelets",
-                bestSeller: false
-            },
-            9: {
-                id: 9,
-                title: "Boucles d'Oreilles Or",
-                titleEn: "Gold Earrings",
-                titleAr: "أقراط ذهبية",
-                price: 699,
-                oldPrice: 799,
-                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-                description: "Boucles d'oreilles en or 14 carats avec design contemporain. Un bijou qui sublime votre féminité.",
-                descriptionEn: "14 carat gold earrings with contemporary design. A piece of jewelry that enhances your femininity.",
-                descriptionAr: "أقراط من الذهب عيار 14 قيراط بتصميم معاصر. قطعة مجوهرات تبرز أنوثتك.",
-                features: [
-                    "Or 14 carats",
-                    "Design contemporain",
-                    "Monture hypoallergénique",
-                    "Poids léger",
-                    "Boîte cadeau luxueuse"
-                ],
-                featuresEn: [
-                    "14 carat gold",
-                    "Contemporary design",
-                    "Hypoallergenic mount",
-                    "Light weight",
-                    "Luxury gift box"
-                ],
-                featuresAr: [
-                    "ذهب عيار 14 قيراط",
-                    "تصميم معاصر",
-                    "تركيب مضاد للحساسية",
-                    "وزن خفيف",
-                    "صندوق هدية فاخر"
-                ],
-                gender: "women",
-                category: "earrings",
-                bestSeller: false
-            },
-            10: {
-                id: 10,
-                title: "Bague Homme Acier",
-                titleEn: "Men's Steel Ring",
-                titleAr: "خاتم فولاذ للرجال",
-                price: 299,
-                oldPrice: null,
-                image: "https://images.unsplash.com/photo-1519415711931-702deacf5be8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                description: "Bague pour homme en acier inoxydable avec finition brossée. Robuste et stylée pour un look masculin.",
-                descriptionEn: "Men's ring in stainless steel with brushed finish. Robust and stylish for a masculine look.",
-                descriptionAr: "خاتم للرجال من الفولاذ المقاوم للصدأ مع إنهاء فرشاة. قوي وأنيق لمظهر رجولي.",
-                features: [
-                    "Acier inoxydable 316L",
-                    "Finition brossée",
-                    "Résistant aux rayures",
-                    "Hypoallergénique",
-                    "Entretien minimal"
-                ],
-                featuresEn: [
-                    "316L stainless steel",
-                    "Brushed finish",
-                    "Scratch resistant",
-                    "Hypoallergenic",
-                    "Minimal maintenance"
-                ],
-                featuresAr: [
-                    "فولاذ مقاوم للصدأ 316L",
-                    "إنهاء بالفرشاة",
-                    "مقاوم للخدوش",
-                    "مضاد للحساسية",
-                    "صيانة قليلة"
-                ],
-                gender: "men",
-                category: "rings",
-                bestSeller: false
-            }
-        };
-
-        // Testimonials data
-        const testimonials = [
-            {
-                name: "Fatima E.",
-                location: "Casablanca",
-                text: "J'ai offert le bracelet en cuir à mon mari pour notre anniversaire de mariage. La qualité est exceptionnelle et le design est vraiment unique. Il ne le quitte plus !",
-                textEn: "I gave the leather bracelet to my husband for our wedding anniversary. The quality is exceptional and the design is truly unique. He never takes it off!",
-                textAr: "لقد قدمت سوار الجلد لزوجي في ذكرى زواجنا. الجودة استثنائية والتصميم فريد حقًا. لم يعد يخلعه أبدًا!",
-                rating: 5,
-                avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-                lang: "fr"
-            },
-            {
-                name: "Ahmed B.",
-                location: "Marrakech",
-                text: "Service client impeccable et livraison ultra rapide. Les bijoux sont encore plus beaux en réalité qu'en photo. Je recommande vivement !",
-                textEn: "Excellent customer service and ultra fast delivery. The jewelry is even more beautiful in reality than in the photo. I highly recommend!",
-                textAr: "خدمة العملاء ممتازة والتسليم سريع جدًا. المجوهرات أجمل في الواقع من الصورة. أوصي بشدة!",
-                rating: 5,
-                avatar: "https://randomuser.me/api/portraits/men/22.jpg",
-                lang: "fr"
-            },
-            {
-                name: "Sarah L.",
-                location: "Rabat",
-                text: "J'ai commandé les boucles d'oreilles en diamant pour mon mariage. Elles étaient parfaites et ont reçu beaucoup de compliments. Merci pour ce bijou magnifique !",
-                textEn: "I ordered the diamond earrings for my wedding. They were perfect and received many compliments. Thank you for this beautiful jewelry!",
-                textAr: "لقد طلبت أقراط الماس لحفل زفافي. كانت مثالية وتلقيت الكثير من الإطراءات. شكرًا على هذه المجوهرات الجميلة!",
-                rating: 5,
-                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-                lang: "fr"
-            },
-            {
-                name: "Karim T.",
-                location: "Tanger",
-                text: "La chaîne en argent est de très bonne qualité. Je la porte tous les jours depuis 6 mois et elle est toujours comme neuve. Excellent rapport qualité-prix.",
-                textEn: "The silver chain is of very good quality. I've been wearing it every day for 6 months and it's still like new. Excellent value for money.",
-                textAr: "السلسلة الفضية ذات جودة عالية جدًا. أرتديها كل يوم منذ 6 أشهر ولا تزال كما لو كانت جديدة. قيمة ممتازة مقابل المال.",
-                rating: 4,
-                avatar: "https://randomuser.me/api/portraits/men/33.jpg",
-                lang: "fr"
-            },
-            {
-                name: "Layla M.",
-                location: "Fès",
-                text: "Le set de bracelets couple était le cadeau parfait pour notre anniversaire. La personnalisation était un plus très apprécié. Service 5 étoiles !",
-                textEn: "The couple's bracelet set was the perfect gift for our anniversary. The personalization was a very appreciated bonus. 5 star service!",
-                textAr: "كانت مجموعة أساور الزوجين الهدية المثالية لذكرى زواجنا. كان التخصيص ميزة موضع تقدير كبير. خدمة 5 نجوم!",
-                rating: 5,
-                avatar: "https://randomuser.me/api/portraits/women/55.jpg",
-                lang: "fr"
-            }
-        ];
-
-        // Cart system
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let currentLanguage = 'fr';
-        let promoCodeApplied = false;
-        let discount = 0;
-        let currentGenderFilter = 'all';
-        let currentTestimonialIndex = 0;
-
-        // Initialize elements
-        const cartCount = document.querySelector('.cart-count');
-        const cartItemsContainer = document.querySelector('.cart-items');
-        const cartTotalPrice = document.getElementById('cart-total-price');
-        const promoInput = document.getElementById('promo-input');
-        const applyPromoBtn = document.getElementById('apply-promo');
-        const promoMessage = document.getElementById('promo-message');
-        const searchBtn = document.getElementById('search-btn');
-        const searchBar = document.getElementById('search-bar');
-        const searchInput = document.getElementById('search-input');
-        const searchResults = document.getElementById('search-results');
-        const genderTabs = document.querySelectorAll('.gender-tab');
-        const testimonialsTrack = document.getElementById('testimonials-track');
-        const testimonialControls = document.getElementById('testimonial-controls');
-
-        // Promo codes
-        const promoCodes = {
-            'YUANUAME10': 10,
-            'LUXURY15': 15,
-            'GOLD20': 20
+        const product = {
+            id: 1,
+            name: "Bracelet Acier Premium",
+            price: 179,
+            image: "C:\\Users\\aliai_gae0b2z\\Desktop\\Commerce\\Site\\New folder\\Firefly_Luxury bracelet floating in mid-air, cinematic lighting, dramatic shadows, premium fa 524950.png"
         };
 
         // Update cart count
         function updateCartCount() {
-            const count = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = count;
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
         }
 
         // Update cart display
         function updateCartDisplay() {
             cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: var(--medium-gray);">Votre panier est vide</p>';
+                cartTotalPrice.textContent = '0 DH';
+                return;
+            }
+            
             let total = 0;
-
+            
             cart.forEach((item, index) => {
-                const product = products[item.id];
                 const itemTotal = product.price * item.quantity;
                 total += itemTotal;
-
+                
                 const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
+                cartItem.className = 'cart-item';
                 cartItem.innerHTML = `
-                    <div class="cart-item-image">
-                        <img src="${product.image}" alt="${product.title}">
-                    </div>
+                    <img src="${product.image}" alt="${product.name}" class="cart-item-image">
                     <div class="cart-item-details">
-                        <h4 class="cart-item-title">${product.title}</h4>
-                        <div class="cart-item-price">${product.price} MAD</div>
-                        <div class="cart-item-quantity">
-                            <button class="decrease-quantity" data-index="${index}">-</button>
+                        <h4 style="margin-bottom: 5px;">${product.name}</h4>
+                        <p style="color: var(--bronze); margin-bottom: 10px;">${product.price} DH × ${item.quantity}</p>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button onclick="updateQuantity(${index}, -1)" style="background: none; border: 1px solid var(--light-gray); width: 25px; height: 25px; border-radius: 2px; cursor: pointer;">-</button>
                             <span>${item.quantity}</span>
-                            <button class="increase-quantity" data-index="${index}">+</button>
+                            <button onclick="updateQuantity(${index}, 1)" style="background: none; border: 1px solid var(--light-gray); width: 25px; height: 25px; border-radius: 2px; cursor: pointer;">+</button>
+                            <button onclick="removeFromCart(${index})" style="margin-left: auto; background: none; border: none; color: var(--medium-gray); cursor: pointer;">
+                                <i class="fas fa-trash"></i>
+                            </button>
                         </div>
                     </div>
-                    <button class="cart-item-remove" data-index="${index}">
-                        <i class="fas fa-times"></i>
-                    </button>
                 `;
                 cartItemsContainer.appendChild(cartItem);
             });
+            
+            cartTotalPrice.textContent = total + ' DH';
+        }
 
-            // Apply discount if promo code is applied
-            if (promoCodeApplied && discount > 0) {
-                total = total * (1 - discount / 100);
-            }
-
-            cartTotalPrice.textContent = Math.round(total) + ' MAD';
+        // Add to cart
+        function addToCart(quantity) {
+            cart.push({
+                id: product.id,
+                quantity: quantity
+            });
+            
             updateCartCount();
+            updateCartDisplay();
+            saveCartToLocalStorage();
+            
+            // Show success message
+            alert('Produit ajouté au panier !');
+        }
+
+        // Update quantity
+        function updateQuantity(index, change) {
+            const newQuantity = cart[index].quantity + change;
+            
+            if (newQuantity < 1) {
+                removeFromCart(index);
+            } else {
+                cart[index].quantity = newQuantity;
+                updateCartCount();
+                updateCartDisplay();
+                saveCartToLocalStorage();
+            }
+        }
+
+        // Remove from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            updateCartDisplay();
             saveCartToLocalStorage();
         }
 
@@ -2990,849 +942,115 @@
             localStorage.setItem('cart', JSON.stringify(cart));
         }
 
-        // Add to cart from product card
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const productCard = button.closest('.product-card');
-                const productId = parseInt(productCard.getAttribute('data-product-id'));
-                addToCart(productId, 1);
-            });
+        // Quantity controls
+        minusBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value > 1) {
+                quantityInput.value = value - 1;
+            }
         });
 
-        // View product details
-        document.querySelectorAll('.view-product').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const productCard = button.closest('.product-card');
-                const productId = parseInt(productCard.getAttribute('data-product-id'));
-                openProductModal(productId);
-            });
+        plusBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value < 10) {
+                quantityInput.value = value + 1;
+            }
         });
 
-        // Also open modal when clicking on product card
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if (!e.target.closest('.product-action')) {
-                    const productId = parseInt(card.getAttribute('data-product-id'));
-                    openProductModal(productId);
-                }
-            });
+        // Add to cart button
+        addToCartBtn.addEventListener('click', () => {
+            const quantity = parseInt(quantityInput.value);
+            addToCart(quantity);
         });
 
-        // Open product modal
-        function openProductModal(productId) {
-            const product = products[productId];
-            const modal = document.querySelector('.product-modal');
-            
-            document.getElementById('modal-product-image').src = product.image;
-            document.getElementById('modal-product-title').textContent = product.title;
-            document.getElementById('modal-product-price').innerHTML = `
-                <span class="price">${product.price} MAD</span>
-                ${product.oldPrice ? `<span class="old-price">${product.oldPrice} MAD</span>` : ''}
-            `;
-            document.getElementById('modal-product-description').textContent = product.description;
-            
-            const featuresList = document.getElementById('modal-product-features');
-            featuresList.innerHTML = '';
-            product.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featuresList.appendChild(li);
-            });
-            
-            const modalAddToCartBtn = document.getElementById('modal-add-to-cart');
-            modalAddToCartBtn.onclick = () => {
-                const quantity = parseInt(document.querySelector('.quantity-input').value);
-                addToCart(productId, quantity);
-                modal.classList.remove('active');
-                overlay.classList.remove('active');
-            };
-            
-            const quantityInput = document.querySelector('.quantity-input');
-            const minusBtn = document.querySelector('.quantity-btn.minus');
-            const plusBtn = document.querySelector('.quantity-btn.plus');
-            
-            minusBtn.onclick = () => {
-                if (quantityInput.value > 1) {
-                    quantityInput.value = parseInt(quantityInput.value) - 1;
-                }
-            };
-            
-            plusBtn.onclick = () => {
-                if (quantityInput.value < 10) {
-                    quantityInput.value = parseInt(quantityInput.value) + 1;
-                }
-            };
-            
-            modal.classList.add('active');
+        // Cart modal controls
+        cartBtn.addEventListener('click', () => {
+            cartModal.classList.add('active');
             overlay.classList.add('active');
-        }
-
-        // Add item to cart
-        function addToCart(productId, quantity) {
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += quantity;
-            } else {
-                cart.push({
-                    id: productId,
-                    quantity: quantity
-                });
-            }
-            
-            updateCartDisplay();
-            
-            // Show feedback
-            const cartBtn = document.getElementById('cart-btn');
-            cartBtn.style.transform = 'scale(1.1)';
-            setTimeout(() => {
-                cartBtn.style.transform = 'scale(1)';
-            }, 300);
-        }
-
-        // Remove item from cart
-        cartItemsContainer.addEventListener('click', (e) => {
-            if (e.target.closest('.cart-item-remove')) {
-                const button = e.target.closest('.cart-item-remove');
-                const index = parseInt(button.getAttribute('data-index'));
-                cart.splice(index, 1);
-                updateCartDisplay();
-            }
-            
-            if (e.target.closest('.decrease-quantity')) {
-                const button = e.target.closest('.decrease-quantity');
-                const index = parseInt(button.getAttribute('data-index'));
-                if (cart[index].quantity > 1) {
-                    cart[index].quantity -= 1;
-                    updateCartDisplay();
-                }
-            }
-            
-            if (e.target.closest('.increase-quantity')) {
-                const button = e.target.closest('.increase-quantity');
-                const index = parseInt(button.getAttribute('data-index'));
-                cart[index].quantity += 1;
-                updateCartDisplay();
-            }
         });
 
-        // Apply promo code
-        applyPromoBtn.addEventListener('click', () => {
-            const code = promoInput.value.trim().toUpperCase();
-            
-            if (promoCodes[code]) {
-                discount = promoCodes[code];
-                promoCodeApplied = true;
-                promoMessage.textContent = `Code appliqué ! Vous avez ${discount}% de réduction.`;
-                promoMessage.className = 'promo-message promo-success';
-                updateCartDisplay();
-            } else {
-                promoMessage.textContent = 'Code promotionnel invalide.';
-                promoMessage.className = 'promo-message promo-error';
-            }
-        });
-
-        // Search functionality
-        searchBtn.addEventListener('click', () => {
-            searchBar.classList.toggle('active');
-            if (searchBar.classList.contains('active')) {
-                searchInput.focus();
-            }
-        });
-
-        searchInput.addEventListener('input', () => {
-            const query = searchInput.value.trim().toLowerCase();
-            searchResults.innerHTML = '';
-            
-            if (query.length < 2) {
-                return;
-            }
-            
-            const filteredProducts = Object.values(products).filter(product => {
-                return product.title.toLowerCase().includes(query) ||
-                       product.description.toLowerCase().includes(query) ||
-                       product.category.toLowerCase().includes(query);
-            });
-            
-            if (filteredProducts.length > 0) {
-                filteredProducts.forEach(product => {
-                    const resultItem = document.createElement('div');
-                    resultItem.classList.add('search-result-item');
-                    resultItem.innerHTML = `
-                        <div class="search-result-image">
-                            <img src="${product.image}" alt="${product.title}">
-                        </div>
-                        <div class="search-result-info">
-                            <div class="search-result-title">${product.title}</div>
-                            <div class="search-result-price">${product.price} MAD</div>
-                        </div>
-                    `;
-                    resultItem.addEventListener('click', () => {
-                        openProductModal(product.id);
-                        searchBar.classList.remove('active');
-                        searchInput.value = '';
-                    });
-                    searchResults.appendChild(resultItem);
-                });
-            } else {
-                const noResults = document.createElement('div');
-                noResults.classList.add('no-results');
-                noResults.textContent = currentLanguage === 'fr' 
-                    ? 'Aucun produit trouvé. Essayez d\'autres termes.' 
-                    : currentLanguage === 'en' 
-                    ? 'No products found. Try other terms.' 
-                    : 'لم يتم العثور على منتجات. جرب مصطلحات أخرى.';
-                searchResults.appendChild(noResults);
-            }
-        });
-
-        // Close search when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!searchBtn.contains(e.target) && !searchBar.contains(e.target)) {
-                searchBar.classList.remove('active');
-            }
-        });
-
-        // Gender tabs filter
-        genderTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                genderTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                currentGenderFilter = tab.getAttribute('data-gender');
-                filterProducts();
-            });
-        });
-
-        function filterProducts() {
-            const productCards = document.querySelectorAll('.product-card');
-            
-            productCards.forEach(card => {
-                const gender = card.getAttribute('data-gender');
-                const category = card.getAttribute('data-category');
-                
-                if (currentGenderFilter === 'all' || gender === currentGenderFilter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Initialize testimonials
-        function initializeTestimonials() {
-            testimonialsTrack.innerHTML = '';
-            testimonialControls.innerHTML = '';
-            
-            const testimonialsPerSlide = window.innerWidth < 900 ? 1 : 3;
-            const totalSlides = Math.ceil(testimonials.length / testimonialsPerSlide);
-            
-            for (let i = 0; i < totalSlides; i++) {
-                const control = document.createElement('div');
-                control.classList.add('testimonial-control');
-                if (i === 0) control.classList.add('active');
-                control.addEventListener('click', () => {
-                    goToTestimonialSlide(i);
-                });
-                testimonialControls.appendChild(control);
-            }
-            
-            showTestimonialSlide(0);
-        }
-
-        function showTestimonialSlide(slideIndex) {
-            const testimonialsPerSlide = window.innerWidth < 900 ? 1 : 3;
-            const startIndex = slideIndex * testimonialsPerSlide;
-            const endIndex = startIndex + testimonialsPerSlide;
-            const slideTestimonials = testimonials.slice(startIndex, endIndex);
-            
-            testimonialsTrack.innerHTML = '';
-            
-            slideTestimonials.forEach(testimonial => {
-                let text = testimonial.text;
-                if (currentLanguage === 'en') text = testimonial.textEn;
-                if (currentLanguage === 'ar') text = testimonial.textAr;
-                
-                const testimonialElement = document.createElement('div');
-                testimonialElement.classList.add('testimonial');
-                testimonialElement.innerHTML = `
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating">
-                            ${'★'.repeat(testimonial.rating)}${'☆'.repeat(5 - testimonial.rating)}
-                        </div>
-                        <p>${text}</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="${testimonial.avatar}" alt="${testimonial.name}">
-                        </div>
-                        <div class="author-info">
-                            <h4>${testimonial.name}</h4>
-                            <p>${testimonial.location}</p>
-                        </div>
-                    </div>
-                `;
-                testimonialsTrack.appendChild(testimonialElement);
-            });
-            
-            // Update controls
-            document.querySelectorAll('.testimonial-control').forEach((control, index) => {
-                control.classList.toggle('active', index === slideIndex);
-            });
-            
-            currentTestimonialIndex = slideIndex;
-        }
-
-        function goToTestimonialSlide(slideIndex) {
-            showTestimonialSlide(slideIndex);
-        }
-
-        // Auto rotate testimonials
-        function startTestimonialRotation() {
-            setInterval(() => {
-                const testimonialsPerSlide = window.innerWidth < 900 ? 1 : 3;
-                const totalSlides = Math.ceil(testimonials.length / testimonialsPerSlide);
-                const nextSlide = (currentTestimonialIndex + 1) % totalSlides;
-                showTestimonialSlide(nextSlide);
-            }, 5000);
-        }
-
-        // Language switcher functionality
-        const languageBtn = document.querySelector('.language-btn');
-        const languageDropdown = document.querySelector('.language-dropdown');
-        const languageOptions = document.querySelectorAll('.language-option');
-
-        // Toggle language dropdown
-        languageBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            languageDropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
-                languageDropdown.classList.remove('active');
-            }
-        });
-
-        // Language translations
-        const translations = {
-            'fr': {
-                'hero-title': "L'Élégance Intemporelle",
-                'hero-subtitle': "L'artisanat d'exception rencontre le design contemporain. Des pièces uniques créées avec passion.",
-                'hero-btn1': 'Découvrir les Best Sellers',
-                'hero-btn2': 'Voir nos collections',
-                'view-collections-btn': 'Explorer toutes nos collections',
-                'categories-title': 'Nos Catégories',
-                'all-gender': 'Tous',
-                'men-gender': 'Homme',
-                'women-gender': 'Femme',
-                'category-men-bracelets': 'Bracelets Hommes',
-                'category-women-bracelets': 'Bracelets Femmes',
-                'category-rings': 'Bagues',
-                'category-necklaces': 'Colliers',
-                'category-men-chains': 'Chaînes Hommes',
-                'category-earrings': 'Boucles d\'Oreilles',
-                'explore-btn': 'Voir',
-                'products-title': 'Nos Best Sellers',
-                'new-badge': 'Nouveau',
-                'sale-badge': 'Promo',
-                'product1-title': 'Bracelet Cuir Artisanal',
-                'product2-title': 'Bracelet Perles Élégant',
-                'product3-title': 'Bague Argent 925',
-                'product4-title': 'Set Bracelet Couple',
-                'product5-title': 'Collier Or 18K',
-                'product6-title': 'Boucles d\'Oreilles Diamant',
-                'view-all-btn': 'Voir tout le catalogue',
-                'feature1-title': 'Livraison Rapide',
-                'feature1-desc': 'Expédition sous 24h partout au Maroc',
-                'feature2-title': 'Paiement Sécurisé',
-                'feature2-desc': 'Transactions cryptées et sécurisées',
-                'feature3-title': 'Retours Gratuits',
-                'feature3-desc': '30 jours pour changer d\'avis',
-                'feature4-title': 'Qualité Premium',
-                'feature4-desc': 'Matériaux de haute qualité garantis',
-                'testimonials-title': 'Ce que disent nos clients',
-                'newsletter-title': 'Restez informé',
-                'newsletter-desc': 'Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives et nouveautés',
-                'newsletter-placeholder': 'Votre adresse email',
-                'newsletter-btn': 'S\'inscrire',
-                'footer-desc': 'Créateur de bijoux artisanaux de luxe qui allient tradition ancestrale et design contemporain.',
-                'footer-nav-title': 'Navigation',
-                'nav-home': 'Accueil',
-                'nav-collections': 'Collections',
-                'nav-shop': 'Best Sellers',
-                'nav-testimonials': 'Avis Clients',
-                'nav-contact': 'Contact',
-                'footer-info-title': 'Informations',
-                'info-delivery': 'Livraison & Retours',
-                'info-sizes': 'Guide des tailles',
-                'info-care': 'Soin des bijoux',
-                'info-privacy': 'Politique de confidentialité',
-                'info-terms': 'Conditions générales',
-                'footer-contact-title': 'Contact',
-                'footer-rights': 'Tous droits réservés.',
-                'cart-title': 'Votre Panier',
-                'cart-total': 'Total:',
-                'cart-checkout': 'Commander',
-                'promo-title': 'Code Promotionnel',
-                'promo-placeholder': 'Entrez votre code',
-                'promo-btn': 'Appliquer',
-                'catalog-title': 'Notre Catalogue Complet',
-                'catalog-desc': 'Découvrez toutes nos collections de bijoux artisanaux',
-                'filter-all': 'Tous',
-                'filter-men': 'Homme',
-                'filter-women': 'Femme',
-                'filter-bracelets': 'Bracelets',
-                'filter-rings': 'Bagues',
-                'filter-necklaces': 'Colliers',
-                'filter-earrings': 'Boucles d\'oreilles',
-                'back-to-home': 'Retour à l\'accueil',
-                'features-title': 'Caractéristiques',
-                'quantity-label': 'Quantité:',
-                'add-to-cart': 'Ajouter au panier'
-            },
-            'en': {
-                'hero-title': 'Timeless Elegance',
-                'hero-subtitle': 'Exceptional craftsmanship meets contemporary design. Unique pieces created with passion.',
-                'hero-btn1': 'Discover Best Sellers',
-                'hero-btn2': 'View our collections',
-                'view-collections-btn': 'Explore all our collections',
-                'categories-title': 'Our Categories',
-                'all-gender': 'All',
-                'men-gender': 'Men',
-                'women-gender': 'Women',
-                'category-men-bracelets': 'Men\'s Bracelets',
-                'category-women-bracelets': 'Women\'s Bracelets',
-                'category-rings': 'Rings',
-                'category-necklaces': 'Necklaces',
-                'category-men-chains': 'Men\'s Chains',
-                'category-earrings': 'Earrings',
-                'explore-btn': 'View',
-                'products-title': 'Our Best Sellers',
-                'new-badge': 'New',
-                'sale-badge': 'Sale',
-                'product1-title': 'Artisan Leather Bracelet',
-                'product2-title': 'Elegant Pearl Bracelet',
-                'product3-title': 'Silver Ring 925',
-                'product4-title': 'Couple Bracelet Set',
-                'product5-title': '18K Gold Necklace',
-                'product6-title': 'Diamond Earrings',
-                'view-all-btn': 'View all catalog',
-                'feature1-title': 'Fast Delivery',
-                'feature1-desc': 'Shipping within 24h across Morocco',
-                'feature2-title': 'Secure Payment',
-                'feature2-desc': 'Encrypted and secure transactions',
-                'feature3-title': 'Free Returns',
-                'feature3-desc': '30 days to change your mind',
-                'feature4-title': 'Premium Quality',
-                'feature4-desc': 'Guaranteed high quality materials',
-                'testimonials-title': 'What our customers say',
-                'newsletter-title': 'Stay informed',
-                'newsletter-desc': 'Subscribe to our newsletter to receive our exclusive offers and news',
-                'newsletter-placeholder': 'Your email address',
-                'newsletter-btn': 'Subscribe',
-                'footer-desc': 'Creator of luxury artisanal jewelry that combines ancestral tradition and contemporary design.',
-                'footer-nav-title': 'Navigation',
-                'nav-home': 'Home',
-                'nav-collections': 'Collections',
-                'nav-shop': 'Best Sellers',
-                'nav-testimonials': 'Testimonials',
-                'nav-contact': 'Contact',
-                'footer-info-title': 'Information',
-                'info-delivery': 'Delivery & Returns',
-                'info-sizes': 'Size guide',
-                'info-care': 'Jewelry care',
-                'info-privacy': 'Privacy policy',
-                'info-terms': 'Terms & conditions',
-                'footer-contact-title': 'Contact',
-                'footer-rights': 'All rights reserved.',
-                'cart-title': 'Your Cart',
-                'cart-total': 'Total:',
-                'cart-checkout': 'Checkout',
-                'promo-title': 'Promotional Code',
-                'promo-placeholder': 'Enter your code',
-                'promo-btn': 'Apply',
-                'catalog-title': 'Our Complete Catalog',
-                'catalog-desc': 'Discover all our artisanal jewelry collections',
-                'filter-all': 'All',
-                'filter-men': 'Men',
-                'filter-women': 'Women',
-                'filter-bracelets': 'Bracelets',
-                'filter-rings': 'Rings',
-                'filter-necklaces': 'Necklaces',
-                'filter-earrings': 'Earrings',
-                'back-to-home': 'Back to home',
-                'features-title': 'Features',
-                'quantity-label': 'Quantity:',
-                'add-to-cart': 'Add to cart'
-            },
-            'ar': {
-                'hero-title': 'أناقة خالدة',
-                'hero-subtitle': 'حرفية استثنائية تلتقي بالتصميم المعاصر. قطع فريدة صنعت بشغف.',
-                'hero-btn1': 'اكتشف الأكثر مبيعاً',
-                'hero-btn2': 'شاهد مجموعاتنا',
-                'view-collections-btn': 'استكشف جميع مجموعاتنا',
-                'categories-title': 'فئاتنا',
-                'all-gender': 'الكل',
-                'men-gender': 'رجال',
-                'women-gender': 'نساء',
-                'category-men-bracelets': 'أساور رجالية',
-                'category-women-bracelets': 'أساور نسائية',
-                'category-rings': 'خواتم',
-                'category-necklaces': 'قلادات',
-                'category-men-chains': 'سلاسل رجالية',
-                'category-earrings': 'أقراط',
-                'explore-btn': 'عرض',
-                'products-title': 'الأكثر مبيعاً',
-                'new-badge': 'جديد',
-                'sale-badge': 'تخفيض',
-                'product1-title': 'سوار جلد حرفي',
-                'product2-title': 'سوار لؤلؤ أنيق',
-                'product3-title': 'خاتم فضة 925',
-                'product4-title': 'مجموعة أساور للزوجين',
-                'product5-title': 'قلادة ذهب 18 قيراط',
-                'product6-title': 'أقراط ماسية',
-                'view-all-btn': 'عرض الكتالوج كاملاً',
-                'feature1-title': 'توصيل سريع',
-                'feature1-desc': 'شحن خلال 24 ساعة في جميع أنحاء المغرب',
-                'feature2-title': 'دفع آمن',
-                'feature2-desc': 'معاملات مشفرة وآمنة',
-                'feature3-title': 'إرجاع مجاني',
-                'feature3-desc': '30 يومًا لتغيير رأيك',
-                'feature4-title': 'جودة متميزة',
-                'feature4-desc': 'مواد عالية الجودة مضمونة',
-                'testimonials-title': 'ماذا يقول عملاؤنا',
-                'newsletter-title': 'ابق على اطلاع',
-                'newsletter-desc': 'اشترك في نشرتنا الإخبارية لتلقي عروضنا الحصرية والأخبار',
-                'newsletter-placeholder': 'عنوان بريدك الإلكتروني',
-                'newsletter-btn': 'اشتراك',
-                'footer-desc': 'صانع مجوهرات حرفية فاخرة تجمع بين التراث التقليدي والتصميم المعاصر.',
-                'footer-nav-title': 'تصفح',
-                'nav-home': 'الرئيسية',
-                'nav-collections': 'المجموعات',
-                'nav-shop': 'الأكثر مبيعاً',
-                'nav-testimonials': 'آراء العملاء',
-                'nav-contact': 'اتصل بنا',
-                'footer-info-title': 'معلومات',
-                'info-delivery': 'التوصيل والمرتجعات',
-                'info-sizes': 'دليل المقاسات',
-                'info-care': 'العناية بالمجوهرات',
-                'info-privacy': 'سياسة الخصوصية',
-                'info-terms': 'الشروط والأحكام',
-                'footer-contact-title': 'اتصل',
-                'footer-rights': 'جميع الحقوق محفوظة.',
-                'cart-title': 'سلة التسوق',
-                'cart-total': 'المجموع:',
-                'cart-checkout': 'إتمام الطلب',
-                'promo-title': 'كود ترويجي',
-                'promo-placeholder': 'أدخل الكود الخاص بك',
-                'promo-btn': 'تطبيق',
-                'catalog-title': 'كتالوجنا الكامل',
-                'catalog-desc': 'اكتشف جميع مجموعاتنا من المجوهرات الحرفية',
-                'filter-all': 'الكل',
-                'filter-men': 'رجال',
-                'filter-women': 'نساء',
-                'filter-bracelets': 'أساور',
-                'filter-rings': 'خواتم',
-                'filter-necklaces': 'قلادات',
-                'filter-earrings': 'أقراط',
-                'back-to-home': 'العودة للرئيسية',
-                'features-title': 'الميزات',
-                'quantity-label': 'الكمية:',
-                'add-to-cart': 'أضف إلى السلة'
-            }
-        };
-
-        // Change language function
-        function changeLanguage(lang) {
-            currentLanguage = lang;
-            document.documentElement.lang = lang;
-            document.querySelector('.language-btn').innerHTML = `<i class="fas fa-globe"></i> ${lang.toUpperCase()}`;
-            
-            // Update all elements with data-lang-key attribute
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT') {
-                        element.placeholder = translations[lang][key];
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
-                }
-            });
-            
-            // Update product titles in modal if open
-            const modal = document.querySelector('.product-modal');
-            if (modal.classList.contains('active')) {
-                const productTitle = document.getElementById('modal-product-title');
-                const productDescription = document.getElementById('modal-product-description');
-                const featuresList = document.getElementById('modal-product-features');
-                
-                // Find which product is currently displayed
-                const productId = Object.keys(products).find(id => 
-                    products[id].title === productTitle.textContent || 
-                    products[id].titleEn === productTitle.textContent ||
-                    products[id].titleAr === productTitle.textContent
-                );
-                
-                if (productId) {
-                    const product = products[productId];
-                    if (lang === 'en') {
-                        productTitle.textContent = product.titleEn;
-                        productDescription.textContent = product.descriptionEn;
-                        featuresList.innerHTML = '';
-                        product.featuresEn.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.textContent = feature;
-                            featuresList.appendChild(li);
-                        });
-                    } else if (lang === 'ar') {
-                        productTitle.textContent = product.titleAr;
-                        productDescription.textContent = product.descriptionAr;
-                        featuresList.innerHTML = '';
-                        product.featuresAr.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.textContent = feature;
-                            featuresList.appendChild(li);
-                        });
-                    } else {
-                        productTitle.textContent = product.title;
-                        productDescription.textContent = product.description;
-                        featuresList.innerHTML = '';
-                        product.features.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.textContent = feature;
-                            featuresList.appendChild(li);
-                        });
-                    }
-                }
-            }
-            
-            // Update product cards
-            document.querySelectorAll('.product-card').forEach(card => {
-                const productId = card.getAttribute('data-product-id');
-                if (productId && products[productId]) {
-                    const product = products[productId];
-                    const titleElement = card.querySelector('.product-title');
-                    
-                    if (lang === 'en') {
-                        titleElement.textContent = product.titleEn;
-                    } else if (lang === 'ar') {
-                        titleElement.textContent = product.titleAr;
-                    } else {
-                        titleElement.textContent = product.title;
-                    }
-                }
-            });
-            
-            // For RTL support for Arabic
-            if (lang === 'ar') {
-                document.body.classList.add('rtl');
-                document.body.setAttribute('dir', 'rtl');
-            } else {
-                document.body.classList.remove('rtl');
-                document.body.setAttribute('dir', 'ltr');
-            }
-            
-            // Close dropdown
-            languageDropdown.classList.remove('active');
-            
-            // Save language preference
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Update testimonials
-            showTestimonialSlide(currentTestimonialIndex);
-        }
-
-        // Add event listeners to language options
-        languageOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.getAttribute('data-lang');
-                changeLanguage(lang);
-            });
-        });
-
-        // Initialize cart and language
-        updateCartDisplay();
-        
-        // Load preferred language from localStorage
-        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'fr';
-        changeLanguage(preferredLanguage);
-        
-        // Newsletter form submission
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            if (email) {
-                alert(currentLanguage === 'fr' 
-                    ? 'Merci pour votre inscription !' 
-                    : currentLanguage === 'en' 
-                    ? 'Thank you for your subscription!' 
-                    : 'شكرًا لك على اشتراكك!');
-                this.reset();
-            }
-        });
-        
-        // Checkout button
-        document.querySelector('.cart-sidebar .btn[data-lang-key="cart-checkout"]').addEventListener('click', function() {
-            if (cart.length === 0) {
-                alert(currentLanguage === 'fr' 
-                    ? 'Votre panier est vide.' 
-                    : currentLanguage === 'en' 
-                    ? 'Your cart is empty.' 
-                    : 'سلة التسوق الخاصة بك فارغة.');
-                return;
-            }
-            
-            alert(currentLanguage === 'fr' 
-                ? 'Merci pour votre commande ! Elle sera traitée rapidement.' 
-                : currentLanguage === 'en' 
-                ? 'Thank you for your order! It will be processed quickly.' 
-                : 'شكرًا لك على طلبك! سيتم معالجته بسرعة.');
-            
-            cart = [];
-            updateCartDisplay();
-            cartSidebar.classList.remove('active');
+        closeCartBtn.addEventListener('click', () => {
+            cartModal.classList.remove('active');
             overlay.classList.remove('active');
         });
 
-        // Initialize testimonials
-        initializeTestimonials();
-        startTestimonialRotation();
-
-        // Catalog page functionality
-        const catalogLink = document.querySelector('.catalog-link');
-        const catalogPage = document.getElementById('catalog');
-        const catalogGrid = document.getElementById('catalog-grid');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-
-        // Initialize catalog
-        function initializeCatalog() {
-            catalogGrid.innerHTML = '';
-            Object.values(products).forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.classList.add('product-card');
-                productCard.setAttribute('data-product-id', product.id);
-                productCard.setAttribute('data-gender', product.gender);
-                productCard.setAttribute('data-category', product.category);
-                if (product.bestSeller) {
-                    productCard.classList.add('best-seller');
-                }
-                productCard.innerHTML = `
-                    ${product.oldPrice ? `<div class="product-badge">${currentLanguage === 'en' ? 'Sale' : currentLanguage === 'ar' ? 'تخفيض' : 'Promo'}</div>` : ''}
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.title}">
-                        <div class="product-overlay">
-                            <div class="product-actions">
-                                <button class="product-action">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <button class="product-action add-to-cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="product-action view-product">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">${product.title}</h3>
-                        <div class="product-price">
-                            <span class="price">${product.price} MAD</span>
-                            ${product.oldPrice ? `<span class="old-price">${product.oldPrice} MAD</span>` : ''}
-                        </div>
-                    </div>
-                `;
-                catalogGrid.appendChild(productCard);
-            });
-
-            // Add event listeners to catalog product cards
-            catalogGrid.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const productCard = button.closest('.product-card');
-                    const productId = parseInt(productCard.getAttribute('data-product-id'));
-                    addToCart(productId, 1);
-                });
-            });
-
-            catalogGrid.querySelectorAll('.view-product').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const productCard = button.closest('.product-card');
-                    const productId = parseInt(productCard.getAttribute('data-product-id'));
-                    openProductModal(productId);
-                });
-            });
-
-            catalogGrid.querySelectorAll('.product-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    if (!e.target.closest('.product-action')) {
-                        const productId = parseInt(card.getAttribute('data-product-id'));
-                        openProductModal(productId);
-                    }
-                });
-            });
-        }
-
-        // Filter catalog
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                filterCatalog(button.getAttribute('data-filter'));
-            });
+        overlay.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+            overlay.classList.remove('active');
         });
 
-        function filterCatalog(filter) {
-            const productCards = catalogGrid.querySelectorAll('.product-card');
-            
-            productCards.forEach(card => {
-                const gender = card.getAttribute('data-gender');
-                const category = card.getAttribute('data-category');
-                
-                if (filter === 'all' || gender === filter || category === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Initialize catalog when page loads
-        initializeCatalog();
-
-        // Update catalog when language changes
-        const originalChangeLanguage = changeLanguage;
-        changeLanguage = function(lang) {
-            originalChangeLanguage(lang);
-            initializeCatalog();
-        };
-
-        // Window resize handler for testimonials
-        window.addEventListener('resize', () => {
-            initializeTestimonials();
-            showTestimonialSlide(0);
-        });
-
-        // Fix for smooth scrolling on anchor links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                if (href === '#home') {
-                    e.preventDefault();
-                    document.querySelectorAll('section').forEach(section => {
-                        section.style.display = 'block';
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
-                    document.getElementById('catalog').style.display = 'none';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    // Close cart if open
+                    cartModal.classList.remove('active');
+                    overlay.classList.remove('active');
                 }
             });
         });
+
+        // Initialize cart
+        updateCartCount();
+        updateCartDisplay();
+
+        // Simple testimonial rotation
+        const testimonials = [
+            {
+                text: "La qualité est exceptionnelle. Le bracelet a un poids parfait et la finition mat est vraiment élégante. Je le recommande vivement !",
+                author: "Karim T.",
+                location: "Casablanca"
+            },
+            {
+                text: "Je le porte tous les jours depuis un mois et il est toujours comme neuf. Le design minimaliste va avec tout.",
+                author: "Sarah L.",
+                location: "Rabat"
+            },
+            {
+                text: "Excellent rapport qualité-prix. Beaucoup plus beau en réalité qu'en photo. Livraison rapide.",
+                author: "Ahmed B.",
+                location: "Marrakech"
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const testimonialContent = document.querySelector('.testimonial-content p');
+        const testimonialAuthor = document.querySelector('.testimonial-author h4');
+        const testimonialLocation = document.querySelector('.testimonial-author p:last-child');
+
+        function rotateTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            const testimonial = testimonials[currentTestimonial];
+            
+            // Fade out
+            testimonialContent.style.opacity = '0';
+            testimonialAuthor.style.opacity = '0';
+            testimonialLocation.style.opacity = '0';
+            
+            setTimeout(() => {
+                testimonialContent.textContent = testimonial.text;
+                testimonialAuthor.textContent = testimonial.author;
+                testimonialLocation.textContent = testimonial.location;
+                
+                // Fade in
+                testimonialContent.style.opacity = '1';
+                testimonialAuthor.style.opacity = '1';
+                testimonialLocation.style.opacity = '1';
+            }, 300);
+        }
+
+        // Rotate testimonial every 5 seconds
+        setInterval(rotateTestimonial, 5000);
     </script>
 </body>
 </html>
