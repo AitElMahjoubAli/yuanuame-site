@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUANUAME - Bracelet Acier Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* RESET ET VARIABLES */
+        :root {
+            /* PALETTE DE COULEURS MAT ET LUXUEUSE */
+            --black-matte: #1A1A1A;
+            --dark-gray: #2D2D2D;
+            --medium-gray: #5A5A5A;
+            --light-gray: #F0F0F0;
+            --cream: #FAF8F5;
+            --bronze: #8C7355;
+            --bronze-dark: #6B5A45;
+            --bronze-light: #B8A58B;
+            --white: #FFFFFF;
+            
+            --shadow-subtle: 0 2px 10px rgba(26, 26, 26, 0.05);
+            --shadow-medium: 0 4px 20px rgba(26, 26, 26, 0.1);
+            --shadow-deep: 0 8px 30px rgba(26, 26, 26, 0.15);
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black-matte);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        /* LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* BOUTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background-color: var(--bronze);
+            color: var(--white);
+            text-decoration: none;
+            border: none;
+            border-radius: 2px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            background-color: var(--bronze-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--bronze);
+            color: var(--bronze);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bronze);
+            color: var(--white);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--black-matte);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--bronze);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--black-matte);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-btn {
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            transition: var(--transition-fast);
+        }
+
+        .cart-btn:hover {
+            color: var(--bronze);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--bronze);
+            color: white;
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* HERO SECTION - PAGE D'ACCUEIL */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--cream) 0%, #f5f1eb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/hero-pattern.png');
+            opacity: 0.03;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: slideUp 1s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--black-matte);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: scaleIn 1s ease-out 0.4s both;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: var(--shadow-deep);
+            transition: var(--transition-smooth);
+        }
+
+        .hero-image:hover img {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        /* PRODUCT CARD ON HOME */
+        .product-card-home {
+            background: var(--white);
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            animation: scaleIn 0.8s ease-out 0.6s both;
+        }
+
+        .product-card-home:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .product-card-home img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .product-card-home h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--black-matte);
+        }
+
+        .product-card-home .price {
+            font-size: 1.8rem;
+            color: var(--bronze);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .product-card-home .old-price {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            text-decoration: line-through;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .product-card-home .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* PRODUCT PAGE STYLES */
+        .product-page {
+            padding: 150px 0 100px;
+        }
+
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-gallery-main {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .product-gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-gallery-main img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-thumb {
+            height: 120px;
+            overflow: hidden;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            border: 2px solid transparent;
+        }
+
+        .gallery-thumb:hover {
+            transform: translateY(-3px);
+            border-color: var(--bronze);
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--black-matte);
+        }
+
+        .product-description {
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .price-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--cream) 0%, #f5f1eb 100%);
+            border-radius: 4px;
+        }
+
+        .current-price {
+            font-size: 2.5rem;
+            color: var(--bronze);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .old-price {
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            text-decoration: line-through;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--medium-gray);
+        }
+
+        .features-list li i {
+            color: var(--bronze);
+            font-size: 1.1rem;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--light-gray);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            transition: var(--transition-fast);
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--light-gray);
+            color: var(--black-matte);
+        }
+
+        .quantity-input {
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: var(--white);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* GALLERY SECTION ON PRODUCT PAGE */
+        .product-gallery-section {
+            margin-top: 100px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            height: 400px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* FEATURES SECTION */
+        .features-section {
+            background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--bronze);
+            margin-bottom: 25px;
+            height: 60px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--black-matte);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .testimonial-content {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-rating {
+            color: var(--bronze);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--bronze);
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--black-matte);
+            color: var(--white);
+            padding: 80px 0 40px;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--bronze-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--bronze-light);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* CART MODAL */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow-deep);
+            transition: var(--transition-smooth);
+            z-index: 1001;
+            padding: 40px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .cart-header h3 {
+            font-size: 1.5rem;
+            color: var(--black-matte);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--medium-gray);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-cart:hover {
+            background-color: var(--light-gray);
+            color: var(--black-matte);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 30px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            color: var(--medium-gray);
+            padding: 60px 0;
+            font-size: 1.1rem;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-gray);
+            align-items: center;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .cart-item-details h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--black-matte);
+        }
+
+        .cart-item-price {
+            color: var(--bronze);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item-controls button {
+            background: none;
+            border: 1px solid var(--light-gray);
+            width: 30px;
+            height: 30px;
+            border-radius: 2px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+        }
+
+        .cart-item-controls button:hover {
+            background-color: var(--light-gray);
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--medium-gray);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            padding: 5px;
+        }
+
+        .cart-item-remove:hover {
+            color: #c62828;
+        }
+
+        .cart-summary {
+            margin-top: auto;
+            padding-top: 30px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--black-matte);
+        }
+
+        /* OVERLAY */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(3px);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* PAGE TRANSITION */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--cream);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .page-transition.fade-out {
+            opacity: 0;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .product-main {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .cart-modal {
+                width: 380px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+            
+            .product-gallery-thumbs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cart-modal {
+                width: 100%;
+                padding: 30px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .product-title {
+                font-size: 2rem;
+            }
+            
+            .current-price {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .quantity-selector {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE TRANSITION LOADER -->
+    <div class="page-transition" id="page-transition">
+        <div style="text-align: center;">
+            <div style="font-size: 3rem; color: var(--bronze); margin-bottom: 20px;">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div style="color: var(--medium-gray);">Chargement...</div>
+        </div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" id="home-link">YUANUAME</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#product">Le Produit</a></li>
+                    <li><a href="#features">Caractéristiques</a></li>
+                    <li><a href="#testimonials">Avis</a></li>
+                </ul>
+            </nav>
+            <button class="cart-btn" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+        <!-- HOME PAGE -->
+        <section class="hero animate-fade-in" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Bracelet Acier Premium</h1>
+                        <p>Élégance mat, design minimaliste. Un accessoire qui redéfinit le luxe contemporain avec une finition exceptionnelle et un confort inégalé.</p>
+                        <div class="hero-buttons" style="display: flex; gap: 20px;">
+                            <a href="#product" class="btn">Découvrir</a>
+                            <a href="#product" class="btn btn-secondary">Voir les détails</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <!-- PRODUIT UNIQUE SUR LA PAGE D'ACCUEIL -->
+                        <a href="#product" class="product-card-home">
+                            <img src="images/bracelet-main.jpg" alt="Bracelet Acier Premium">
+                            <h3>Bracelet Acier Premium</h3>
+                            <span class="price">179 DH</span>
+                            <span class="old-price">199 DH</span>
+                            <div class="btn">Voir le produit</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT PAGE (initially hidden) -->
+        <section class="product-page" id="product-page" style="display: none;">
+            <div class="container">
+                <div class="product-main">
+                    <!-- GALLERY -->
+                    <div class="product-gallery">
+                        <div class="product-gallery-main">
+                            <img src="images/bracelet-main.jpg" alt="Bracelet Acier Premium" id="main-product-image">
+                        </div>
+                        <div class="product-gallery-thumbs">
+                            <div class="gallery-thumb" data-image="images/bracelet-main.jpg">
+                                <img src="images/bracelet-main.jpg" alt="Bracelet vue principale">
+                            </div>
+                            <div class="gallery-thumb" data-image="images/bracelet-gallery-1.jpg">
+                                <img src="images/bracelet-gallery-1.jpg" alt="Bracelet design minimaliste">
+                            </div>
+                            <div class="gallery-thumb" data-image="images/bracelet-gallery-2.jpg">
+                                <img src="images/bracelet-gallery-2.jpg" alt="Bracelet éléments naturels">
+                            </div>
+                            <div class="gallery-thumb" data-image="images/bracelet-gallery-3.jpg">
+                                <img src="images/bracelet-gallery-3.jpg" alt="Bracelet symétrie élégante">
+                            </div>
+                            <div class="gallery-thumb" data-image="images/bracelet-gallery-4.jpg">
+                                <img src="images/bracelet-gallery-4.jpg" alt="Bracelet architecture moderne">
+                            </div>
+                            <div class="gallery-thumb" data-image="images/bracelet-gallery-5.jpg">
+                                <img src="images/bracelet-gallery-5.jpg" alt="Bracelet éclairage dramatique">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PRODUCT DETAILS -->
+                    <div class="product-details">
+                        <h1 class="product-title animate-slide-up">Bracelet Acier Premium</h1>
+                        <p class="product-description">
+                            Un bracelet en acier inoxydable 316L qui allie design minimaliste et qualité exceptionnelle. 
+                            Fabriqué avec précision, il offre un confort optimal et une durabilité à toute épreuve. 
+                            La finition mat premium confère une élégance discrète qui s'accorde avec toutes les tenues.
+                        </p>
+                        
+                        <div class="price-section animate-scale-in">
+                            <span class="current-price">179 DH</span>
+                            <span class="old-price">199 DH</span>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Acier inoxydable 316L de qualité chirurgicale</li>
+                            <li><i class="fas fa-check"></i> Finition mat premium anti-traces</li>
+                            <li><i class="fas fa-check"></i> Ajustable pour poignets de 16 à 22 cm</li>
+                            <li><i class="fas fa-check"></i> Résistant à l'eau (5 ATM)</li>
+                            <li><i class="fas fa-check"></i> Garantie fabricant de 2 ans</li>
+                            <li><i class="fas fa-check"></i> Édition limitée numérotée</li>
+                        </ul>
+                        
+                        <div class="quantity-selector">
+                            <span style="font-weight: 500;">Quantité:</span>
+                            <div class="quantity-control">
+                                <button class="quantity-btn" id="quantity-minus">-</button>
+                                <input type="text" class="quantity-input" id="quantity-input" value="1" readonly>
+                                <button class="quantity-btn" id="quantity-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn add-to-cart-btn" id="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier - 179 DH
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PRODUCT GALLERY SECTION -->
+                <div class="product-gallery-section">
+                    <div class="section-title">
+                        <h2>Galerie Exclusive</h2>
+                        <p style="color: var(--medium-gray); margin-top: 10px;">Découvrez notre bracelet sous différents angles et environnements</p>
+                    </div>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/bracelet-gallery-1.jpg" alt="Design minimaliste">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/bracelet-gallery-2.jpg" alt="Éléments naturels">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/bracelet-gallery-3.jpg" alt="Symétrie élégante">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/bracelet-gallery-4.jpg" alt="Architecture moderne">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/bracelet-gallery-5.jpg" alt="Éclairage dramatique">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/bracelet-gallery-6.jpg" alt="Environnement cinématique">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section section-padding" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Caractéristiques Premium</h2>
+                    <p style="color: var(--medium-gray); margin-top: 10px;">Ce qui rend ce bracelet exceptionnel</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card animate-slide-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Qualité Supérieure</h3>
+                        <p>Acier 316L de qualité chirurgicale, résistant à la corrosion et aux allergies</p>
+                    </div>
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.1s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <h3>Ajustement Parfait</h3>
+                        <p>Système d'ajustement précis pour un confort optimal toute la journée</p>
+                    </div>
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Résistance à l'Eau</h3>
+                        <p>Résiste à l'eau jusqu'à 5 ATM, idéal pour un usage quotidien</p>
+                    </div>
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.3s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Garantie 2 Ans</h3>
+                        <p>Garantie fabricant complète sur tous les défauts de matériel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials section-padding" id="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Avis Clients</h2>
+                    <p style="color: var(--medium-gray); margin-top: 10px;">Ce que disent nos clients satisfaits</p>
+                </div>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial-content animate-scale-in">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text" id="testimonial-text">
+                            "La qualité est exceptionnelle. Le bracelet a un poids parfait et la finition mat est vraiment élégante. 
+                            Je le porte tous les jours depuis 3 mois et il est toujours comme neuf. Je le recommande vivement !"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4 id="testimonial-author">Karim T.</h4>
+                                <p id="testimonial-location">Casablanca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>YUANUAME</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-top: 15px; line-height: 1.8;">
+                        Créateur d'accessoires premium qui allient design minimaliste et qualité exceptionnelle. 
+                        Chaque pièce est conçue avec soin pour offrir élégance et durabilité.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#product"><i class="fas fa-chevron-right"></i> Le Produit</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Caractéristiques</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Avis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Livraison</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Retours</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Guide des tailles</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Casablanca, Maroc</li>
+                        <li><i class="fas fa-phone"></i> +212 5 XX XX XX XX</li>
+                        <li><i class="fas fa-envelope"></i> contact@yuanuame.ma</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 YUANUAME. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART MODAL -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty" id="cart-empty">
+                <div style="font-size: 3rem; color: var(--light-gray); margin-bottom: 20px;">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <p>Votre panier est vide</p>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Ajoutez des produits pour commencer</p>
+            </div>
+        </div>
+        
+        <div class="cart-summary" id="cart-summary" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0 DH</span>
+            </div>
+            <button class="btn" style="width: 100%;">Passer la commande</button>
+        </div>
+    </div>
+
+    <script>
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide page transition after 1 second
+            setTimeout(() => {
+                document.getElementById('page-transition').classList.add('fade-out');
+                setTimeout(() => {
+                    document.getElementById('page-transition').style.display = 'none';
+                }, 600);
+            }, 1000);
+            
+            // Initialize cart from localStorage
+            initializeCart();
+            
+            // Setup event listeners
+            setupEventListeners();
+            
+            // Setup testimonial rotation
+            setupTestimonialRotation();
+            
+            // Check if we're on product page
+            if (window.location.hash === '#product') {
+                navigateToProductPage();
+            }
+        });
+
+        // ==================== CART SYSTEM ====================
+        let cart = [];
+        const PRODUCT = {
+            id: 1,
+            name: "Bracelet Acier Premium",
+            price: 179,
+            image: "images/bracelet-main.jpg"
+        };
+
+        function initializeCart() {
+            // Load cart from localStorage
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+            } else {
+                cart = []; // Empty cart by default
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+            updateCartDisplay();
+        }
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = totalItems;
+        }
+
+        function updateCartDisplay() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            const cartEmpty = document.getElementById('cart-empty');
+            
+            if (cart.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartSummary.style.display = 'none';
+                cartItemsContainer.innerHTML = '';
+                cartItemsContainer.appendChild(cartEmpty);
+            } else {
+                cartEmpty.style.display = 'none';
+                cartSummary.style.display = 'block';
+                
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                
+                cart.forEach((item, index) => {
+                    const itemTotal = PRODUCT.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${PRODUCT.image}" alt="${PRODUCT.name}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h4>${PRODUCT.name}</h4>
+                            <span class="cart-item-price">${PRODUCT.price} DH</span>
+                            <div class="cart-item-controls">
+                                <button onclick="updateCartQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateCartQuantity(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${index})">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                document.getElementById('cart-total-price').textContent = total + ' DH';
+            }
+            
+            updateCartCount();
+            saveCartToLocalStorage();
+        }
+
+        function addToCart(quantity) {
+            // Check if product already in cart
+            const existingItemIndex = cart.findIndex(item => item.id === PRODUCT.id);
+            
+            if (existingItemIndex > -1) {
+                // Update quantity if already in cart
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                // Add new item to cart
+                cart.push({
+                    id: PRODUCT.id,
+                    quantity: quantity
+                });
+            }
+            
+            updateCartDisplay();
+            showCartNotification(quantity);
+        }
+
+        function updateCartQuantity(index, change) {
+            const newQuantity = cart[index].quantity + change;
+            
+            if (newQuantity < 1) {
+                removeFromCart(index);
+            } else {
+                cart[index].quantity = newQuantity;
+                updateCartDisplay();
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function showCartNotification(quantity) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--bronze);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 4px;
+                box-shadow: var(--shadow-medium);
+                z-index: 2000;
+                animation: slideInRight 0.3s ease-out;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${quantity} produit(s) ajouté(s) au panier</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease-out';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // ==================== PAGE NAVIGATION ====================
+        function navigateToProductPage() {
+            const homeSection = document.getElementById('home');
+            const productPage = document.getElementById('product-page');
+            const mainContent = document.getElementById('main-content');
+            
+            // Show page transition
+            const pageTransition = document.getElementById('page-transition');
+            pageTransition.style.display = 'flex';
+            pageTransition.classList.remove('fade-out');
+            
+            setTimeout(() => {
+                // Hide home, show product page
+                homeSection.style.display = 'none';
+                productPage.style.display = 'block';
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+                
+                // Hide page transition
+                setTimeout(() => {
+                    pageTransition.classList.add('fade-out');
+                    setTimeout(() => {
+                        pageTransition.style.display = 'none';
+                    }, 600);
+                }, 300);
+            }, 300);
+        }
+
+        function navigateToHomePage() {
+            const homeSection = document.getElementById('home');
+            const productPage = document.getElementById('product-page');
+            const pageTransition = document.getElementById('page-transition');
+            
+            pageTransition.style.display = 'flex';
+            pageTransition.classList.remove('fade-out');
+            
+            setTimeout(() => {
+                productPage.style.display = 'none';
+                homeSection.style.display = 'block';
+                
+                window.scrollTo(0, 0);
+                
+                setTimeout(() => {
+                    pageTransition.classList.add('fade-out');
+                    setTimeout(() => {
+                        pageTransition.style.display = 'none';
+                    }, 600);
+                }, 300);
+            }, 300);
+        }
+
+        // ==================== GALLERY FUNCTIONALITY ====================
+        function setupGallery() {
+            const thumbnails = document.querySelectorAll('.gallery-thumb');
+            const mainImage = document.getElementById('main-product-image');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    const newImage = thumb.getAttribute('data-image');
+                    mainImage.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        mainImage.src = newImage;
+                        mainImage.style.opacity = '1';
+                        
+                        // Update active thumbnail
+                        thumbnails.forEach(t => t.style.borderColor = 'transparent');
+                        thumb.style.borderColor = 'var(--bronze)';
+                    }, 200);
+                });
+            });
+        }
+
+        // ==================== TESTIMONIAL ROTATION ====================
+        const testimonials = [
+            {
+                text: "La qualité est exceptionnelle. Le bracelet a un poids parfait et la finition mat est vraiment élégante. Je le porte tous les jours depuis 3 mois et il est toujours comme neuf. Je le recommande vivement !",
+                author: "Karim T.",
+                location: "Casablanca"
+            },
+            {
+                text: "Je cherchais un bracelet sobre et élégant pour le quotidien. Celui-ci est parfait ! Le design minimaliste va avec tout, et la qualité est au rendez-vous. Livraison rapide et emballage soigné.",
+                author: "Sarah L.",
+                location: "Rabat"
+            },
+            {
+                text: "Excellent rapport qualité-prix. Beaucoup plus beau en réalité qu'en photo. L'acier est de très bonne qualité et le système d'ajustement est pratique. Acheté en cadeau, très apprécié !",
+                author: "Ahmed B.",
+                location: "Marrakech"
+            }
+        ];
+
+        function setupTestimonialRotation() {
+            let currentTestimonial = 0;
+            const textElement = document.getElementById('testimonial-text');
+            const authorElement = document.getElementById('testimonial-author');
+            const locationElement = document.getElementById('testimonial-location');
+            
+            function rotateTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                const testimonial = testimonials[currentTestimonial];
+                
+                // Fade out
+                textElement.style.opacity = '0';
+                authorElement.style.opacity = '0';
+                locationElement.style.opacity = '0';
+                
+                setTimeout(() => {
+                    textElement.textContent = testimonial.text;
+                    authorElement.textContent = testimonial.author;
+                    locationElement.textContent = testimonial.location;
+                    
+                    // Fade in
+                    textElement.style.opacity = '1';
+                    authorElement.style.opacity = '1';
+                    locationElement.style.opacity = '1';
+                }, 300);
+            }
+            
+            // Rotate every 8 seconds
+            setInterval(rotateTestimonial, 8000);
+        }
+
+        // ==================== EVENT LISTENERS SETUP ====================
+        function setupEventListeners() {
+            // Cart modal controls
+            document.getElementById('cart-btn').addEventListener('click', () => {
+                document.getElementById('cart-modal').classList.add('active');
+                document.getElementById('overlay').classList.add('active');
+            });
+
+            document.getElementById('close-cart').addEventListener('click', () => {
+                document.getElementById('cart-modal').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            });
+
+            document.getElementById('overlay').addEventListener('click', () => {
+                document.getElementById('cart-modal').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            });
+
+            // Quantity controls
+            let quantity = 1;
+            const quantityInput = document.getElementById('quantity-input');
+            const quantityMinus = document.getElementById('quantity-minus');
+            const quantityPlus = document.getElementById('quantity-plus');
+
+            quantityMinus.addEventListener('click', () => {
+                if (quantity > 1) {
+                    quantity--;
+                    quantityInput.value = quantity;
+                }
+            });
+
+            quantityPlus.addEventListener('click', () => {
+                if (quantity < 10) {
+                    quantity++;
+                    quantityInput.value = quantity;
+                }
+            });
+
+            // Add to cart button
+            document.getElementById('add-to-cart').addEventListener('click', () => {
+                addToCart(quantity);
+                // Reset quantity
+                quantity = 1;
+                quantityInput.value = quantity;
+            });
+
+            // Navigation links
+            document.getElementById('home-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateToHomePage();
+                window.location.hash = '';
+            });
+
+            // Product card on home page
+            document.querySelector('.product-card-home').addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateToProductPage();
+                window.location.hash = 'product';
+            });
+
+            // Navigation links for product page
+            document.querySelectorAll('a[href="#product"]').forEach(link => {
+                if (!link.classList.contains('product-card-home')) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        navigateToProductPage();
+                        window.location.hash = 'product';
+                    });
+                }
+            });
+
+            // Navigation links for home
+            document.querySelectorAll('a[href="#home"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navigateToHomePage();
+                    window.location.hash = '';
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                if (!anchor.getAttribute('href').match(/^#(home|product)$/)) {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Setup gallery when on product page
+            if (document.querySelector('.product-gallery-thumbs')) {
+                setupGallery();
+            }
+
+            // Checkout button
+            document.querySelector('.cart-summary .btn').addEventListener('click', () => {
+                if (cart.length === 0) {
+                    alert('Votre panier est vide. Ajoutez des produits avant de commander.');
+                    return;
+                }
+                
+                alert('Merci pour votre commande ! Elle sera traitée rapidement.');
+                cart = [];
+                updateCartDisplay();
+                document.getElementById('cart-modal').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            });
+        }
+
+        // Add CSS for notification animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
