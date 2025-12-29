@@ -80,6 +80,11 @@
             }
         }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out;
         }
@@ -90,6 +95,10 @@
 
         .animate-scale-in {
             animation: scaleIn 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
 
         /* LAYOUT */
@@ -113,19 +122,21 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 14px 32px;
+            padding: 16px 40px;
             background-color: var(--bronze);
             color: var(--white);
             text-decoration: none;
             border: none;
             border-radius: 2px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             transition: var(--transition-smooth);
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .btn::before {
@@ -154,13 +165,12 @@
 
         .btn-secondary {
             background-color: transparent;
-            border: 1px solid var(--bronze);
-            color: var(--bronze);
+            border: 1px solid var(--white);
+            color: var(--white);
         }
 
         .btn-secondary:hover {
-            background-color: var(--bronze);
-            color: var(--white);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         /* HEADER */
@@ -169,27 +179,35 @@
             top: 0;
             left: 0;
             width: 100%;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            padding: 20px 0;
+        }
+
+        header.scrolled {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
             box-shadow: var(--shadow-subtle);
-            transition: var(--transition-smooth);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            color: var(--black-matte);
+            color: var(--white);
             text-decoration: none;
             font-weight: 700;
             letter-spacing: 1px;
+            transition: var(--transition-fast);
+        }
+
+        header.scrolled .logo {
+            color: var(--black-matte);
         }
 
         .nav-links {
@@ -199,12 +217,16 @@
         }
 
         .nav-links a {
-            color: var(--medium-gray);
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition-fast);
             position: relative;
             padding: 5px 0;
+        }
+
+        header.scrolled .nav-links a {
+            color: var(--medium-gray);
         }
 
         .nav-links a::after {
@@ -219,7 +241,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--black-matte);
+            color: var(--bronze-light);
         }
 
         .nav-links a:hover::after {
@@ -232,8 +254,12 @@
             border: none;
             cursor: pointer;
             font-size: 1.2rem;
-            color: var(--medium-gray);
+            color: var(--white);
             transition: var(--transition-fast);
+        }
+
+        header.scrolled .cart-btn {
+            color: var(--medium-gray);
         }
 
         .cart-btn:hover {
@@ -256,126 +282,219 @@
             font-weight: 600;
         }
 
-        /* HERO SECTION - PAGE D'ACCUEIL */
+        /* HERO SECTION AVEC VIDEO */
         .hero {
-            min-height: 100vh;
+            position: relative;
+            height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
-            background: linear-gradient(135deg, var(--cream) 0%, #f5f1eb 100%);
-            position: relative;
+            justify-content: center;
             overflow: hidden;
+            color: var(--white);
         }
 
-        .hero::before {
-            content: '';
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/hero-pattern.png');
-            opacity: 0.03;
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.4) 100%);
+            z-index: -1;
         }
 
         .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        .scroll-indicator i {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* PRODUCT SHOWCASE SECTION */
+        .product-showcase {
+            background-color: var(--cream);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--black-matte);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .showcase-product {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
-        }
-
-        .hero-text {
-            animation: slideUp 1s ease-out 0.2s both;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--black-matte);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-            margin-bottom: 40px;
-            max-width: 500px;
-        }
-
-        .hero-image {
-            position: relative;
-            animation: scaleIn 1s ease-out 0.4s both;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: var(--shadow-deep);
-            transition: var(--transition-smooth);
-        }
-
-        .hero-image:hover img {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-deep);
-        }
-
-        /* PRODUCT CARD ON HOME */
-        .product-card-home {
             background: var(--white);
             border-radius: 4px;
-            padding: 30px;
+            overflow: hidden;
             box-shadow: var(--shadow-medium);
             transition: var(--transition-smooth);
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            animation: scaleIn 0.8s ease-out 0.6s both;
         }
 
-        .product-card-home:hover {
+        .showcase-product:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-deep);
         }
 
-        .product-card-home img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 2px;
-            margin-bottom: 20px;
+        .showcase-image {
+            position: relative;
+            overflow: hidden;
         }
 
-        .product-card-home h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .showcase-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .showcase-product:hover .showcase-image img {
+            transform: scale(1.05);
+        }
+
+        .showcase-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.3));
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+        }
+
+        .product-badge {
+            background-color: var(--bronze);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .showcase-details {
+            padding: 60px;
+        }
+
+        .showcase-details h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             color: var(--black-matte);
         }
 
-        .product-card-home .price {
-            font-size: 1.8rem;
+        .showcase-description {
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .price-container {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--cream) 0%, #f5f1eb 100%);
+            border-radius: 4px;
+        }
+
+        .current-price {
+            font-size: 2.5rem;
             color: var(--bronze);
-            font-weight: 600;
+            font-weight: 700;
+            display: block;
             margin-bottom: 5px;
         }
 
-        .product-card-home .old-price {
-            font-size: 1.1rem;
+        .old-price {
+            font-size: 1.3rem;
             color: var(--medium-gray);
             text-decoration: line-through;
-            margin-bottom: 15px;
-            display: block;
         }
 
-        .product-card-home .btn {
+        .view-product-btn {
+            margin-top: 20px;
             width: 100%;
-            margin-top: 10px;
+            padding: 18px;
+            font-size: 1.1rem;
         }
 
         /* PRODUCT PAGE STYLES */
         .product-page {
             padding: 150px 0 100px;
+            display: none;
         }
 
         .product-main {
@@ -430,6 +549,10 @@
             border-color: var(--bronze);
         }
 
+        .gallery-thumb.active {
+            border-color: var(--bronze);
+        }
+
         .gallery-thumb img {
             width: 100%;
             height: 100%;
@@ -450,27 +573,6 @@
             color: var(--medium-gray);
             margin-bottom: 30px;
             line-height: 1.8;
-        }
-
-        .price-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, var(--cream) 0%, #f5f1eb 100%);
-            border-radius: 4px;
-        }
-
-        .current-price {
-            font-size: 2.5rem;
-            color: var(--bronze);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .old-price {
-            font-size: 1.3rem;
-            color: var(--medium-gray);
-            text-decoration: line-through;
         }
 
         .features-list {
@@ -540,7 +642,7 @@
             margin-top: 20px;
         }
 
-        /* GALLERY SECTION ON PRODUCT PAGE */
+        /* PRODUCT GALLERY SECTION */
         .product-gallery-section {
             margin-top: 100px;
         }
@@ -913,10 +1015,17 @@
 
         /* RESPONSIVE DESIGN */
         @media (max-width: 1024px) {
-            .hero-content,
-            .product-main {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .showcase-product {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 0;
+            }
+            
+            .showcase-image img {
+                height: 400px;
             }
             
             .gallery-grid {
@@ -932,6 +1041,11 @@
                 gap: 40px;
             }
             
+            .product-main {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
             .cart-modal {
                 width: 380px;
             }
@@ -943,7 +1057,11 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .gallery-grid {
@@ -956,6 +1074,14 @@
             
             .section-padding {
                 padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .showcase-details {
+                padding: 40px;
             }
             
             .product-gallery-thumbs {
@@ -975,7 +1101,7 @@
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .product-title {
@@ -986,16 +1112,24 @@
                 font-size: 2rem;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .quantity-selector {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 20px;
             }
+        }
+
+        /* FALLBACK FOR VIDEO */
+        .video-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.6);
+            display: none;
         }
     </style>
 </head>
@@ -1020,7 +1154,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Accueil</a></li>
-                    <li><a href="#product">Le Produit</a></li>
+                    <li><a href="#showcase">Notre Produit</a></li>
                     <li><a href="#features">Caractéristiques</a></li>
                     <li><a href="#testimonials">Avis</a></li>
                 </ul>
@@ -1034,34 +1168,74 @@
 
     <!-- MAIN CONTENT -->
     <main id="main-content">
-        <!-- HOME PAGE -->
+        <!-- HOME PAGE WITH VIDEO BACKGROUND -->
         <section class="hero animate-fade-in" id="home">
+            <!-- Video Background -->
+            <video class="video-background" autoplay muted loop playsinline id="hero-video">
+                <source src="images/videohome.mp4" type="video/mp4">
+                <source src="images/videohome.webm" type="video/webm">
+                <!-- Fallback image if video doesn't load -->
+                <img src="images/bracelet-main.jpg" alt="Bracelet Acier Premium" class="video-fallback">
+            </video>
+            
+            <!-- Overlay for better text readability -->
+            <div class="hero-overlay"></div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1>Bracelet Acier Premium</h1>
+                <p>L'élégance mat rencontre le design minimaliste. Découvrez notre création exclusive.</p>
+                <div class="hero-buttons" style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="#showcase" class="btn">Découvrir</a>
+                    <a href="#showcase" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <a href="#showcase" class="scroll-indicator">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- PRODUCT SHOWCASE SECTION -->
+        <section class="product-showcase section-padding" id="showcase">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Bracelet Acier Premium</h1>
-                        <p>Élégance mat, design minimaliste. Un accessoire qui redéfinit le luxe contemporain avec une finition exceptionnelle et un confort inégalé.</p>
-                        <div class="hero-buttons" style="display: flex; gap: 20px;">
-                            <a href="#product" class="btn">Découvrir</a>
-                            <a href="#product" class="btn btn-secondary">Voir les détails</a>
+                <div class="section-title">
+                    <h2 class="animate-slide-up">Notre Création Exclusive</h2>
+                    <p class="animate-slide-up" style="animation-delay: 0.1s;">Un bracelet qui allie design minimaliste et qualité exceptionnelle</p>
+                </div>
+                
+                <div class="showcase-product animate-scale-in">
+                    <div class="showcase-image">
+                        <img src="images/bracelet-main.jpg" alt="Bracelet Acier Premium">
+                        <div class="showcase-overlay">
+                            <div class="product-badge">Édition Limitée</div>
                         </div>
                     </div>
-                    <div class="hero-image">
-                        <!-- PRODUIT UNIQUE SUR LA PAGE D'ACCUEIL -->
-                        <a href="#product" class="product-card-home">
-                            <img src="images/bracelet-main.jpg" alt="Bracelet Acier Premium">
-                            <h3>Bracelet Acier Premium</h3>
-                            <span class="price">179 DH</span>
+                    <div class="showcase-details">
+                        <h3>Bracelet Acier Premium</h3>
+                        <p class="showcase-description">
+                            Découvrez notre bracelet en acier inoxydable 316L, conçu pour ceux qui apprécient 
+                            l'élégance discrète et la qualité supérieure. Chaque détail a été pensé pour offrir 
+                            un confort optimal et une durabilité à toute épreuve.
+                        </p>
+                        
+                        <div class="price-container">
+                            <span class="current-price">179 DH</span>
                             <span class="old-price">199 DH</span>
-                            <div class="btn">Voir le produit</div>
-                        </a>
+                        </div>
+                        
+                        <button class="btn view-product-btn" id="view-product-btn">
+                            <i class="fas fa-eye"></i> Voir le produit
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- PRODUCT PAGE (initially hidden) -->
-        <section class="product-page" id="product-page" style="display: none;">
+        <section class="product-page" id="product-page">
             <div class="container">
                 <div class="product-main">
                     <!-- GALLERY -->
@@ -1070,7 +1244,7 @@
                             <img src="images/bracelet-main.jpg" alt="Bracelet Acier Premium" id="main-product-image">
                         </div>
                         <div class="product-gallery-thumbs">
-                            <div class="gallery-thumb" data-image="images/bracelet-main.jpg">
+                            <div class="gallery-thumb active" data-image="images/bracelet-main.jpg">
                                 <img src="images/bracelet-main.jpg" alt="Bracelet vue principale">
                             </div>
                             <div class="gallery-thumb" data-image="images/bracelet-gallery-1.jpg">
@@ -1100,7 +1274,7 @@
                             La finition mat premium confère une élégance discrète qui s'accorde avec toutes les tenues.
                         </p>
                         
-                        <div class="price-section animate-scale-in">
+                        <div class="price-container animate-scale-in">
                             <span class="current-price">179 DH</span>
                             <span class="old-price">199 DH</span>
                         </div>
@@ -1252,7 +1426,7 @@
                     <h3>Navigation</h3>
                     <ul class="footer-links">
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
-                        <li><a href="#product"><i class="fas fa-chevron-right"></i> Le Produit</a></li>
+                        <li><a href="#showcase"><i class="fas fa-chevron-right"></i> Notre Produit</a></li>
                         <li><a href="#features"><i class="fas fa-chevron-right"></i> Caractéristiques</a></li>
                         <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Avis</a></li>
                     </ul>
@@ -1330,11 +1504,53 @@
             // Setup testimonial rotation
             setupTestimonialRotation();
             
+            // Setup header scroll effect
+            setupHeaderScroll();
+            
+            // Setup video fallback
+            setupVideoFallback();
+            
             // Check if we're on product page
             if (window.location.hash === '#product') {
                 navigateToProductPage();
             }
         });
+
+        // ==================== VIDEO HANDLING ====================
+        function setupVideoFallback() {
+            const video = document.getElementById('hero-video');
+            
+            // Check if video can play
+            video.addEventListener('error', () => {
+                console.log('Video failed to load, using fallback image');
+                document.querySelector('.video-fallback').style.display = 'block';
+            });
+            
+            // Try to play video
+            video.play().catch(error => {
+                console.log('Video autoplay blocked:', error);
+                document.querySelector('.video-fallback').style.display = 'block';
+            });
+        }
+
+        // ==================== HEADER SCROLL EFFECT ====================
+        function setupHeaderScroll() {
+            const header = document.querySelector('header');
+            
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            
+            // Initial check
+            handleScroll();
+            
+            // Listen for scroll
+            window.addEventListener('scroll', handleScroll);
+        }
 
         // ==================== CART SYSTEM ====================
         let cart = [];
@@ -1486,7 +1702,8 @@
 
         // ==================== PAGE NAVIGATION ====================
         function navigateToProductPage() {
-            const homeSection = document.getElementById('home');
+            const heroSection = document.getElementById('home');
+            const showcaseSection = document.getElementById('showcase');
             const productPage = document.getElementById('product-page');
             const mainContent = document.getElementById('main-content');
             
@@ -1496,12 +1713,16 @@
             pageTransition.classList.remove('fade-out');
             
             setTimeout(() => {
-                // Hide home, show product page
-                homeSection.style.display = 'none';
+                // Hide hero and showcase, show product page
+                heroSection.style.display = 'none';
+                showcaseSection.style.display = 'none';
                 productPage.style.display = 'block';
                 
                 // Scroll to top
                 window.scrollTo(0, 0);
+                
+                // Setup gallery
+                setupGallery();
                 
                 // Hide page transition
                 setTimeout(() => {
@@ -1514,7 +1735,8 @@
         }
 
         function navigateToHomePage() {
-            const homeSection = document.getElementById('home');
+            const heroSection = document.getElementById('home');
+            const showcaseSection = document.getElementById('showcase');
             const productPage = document.getElementById('product-page');
             const pageTransition = document.getElementById('page-transition');
             
@@ -1523,7 +1745,8 @@
             
             setTimeout(() => {
                 productPage.style.display = 'none';
-                homeSection.style.display = 'block';
+                heroSection.style.display = 'block';
+                showcaseSection.style.display = 'block';
                 
                 window.scrollTo(0, 0);
                 
@@ -1551,8 +1774,8 @@
                         mainImage.style.opacity = '1';
                         
                         // Update active thumbnail
-                        thumbnails.forEach(t => t.style.borderColor = 'transparent');
-                        thumb.style.borderColor = 'var(--bronze)';
+                        thumbnails.forEach(t => t.classList.remove('active'));
+                        thumb.classList.add('active');
                     }, 200);
                 });
             });
@@ -1632,51 +1855,47 @@
             const quantityMinus = document.getElementById('quantity-minus');
             const quantityPlus = document.getElementById('quantity-plus');
 
-            quantityMinus.addEventListener('click', () => {
-                if (quantity > 1) {
-                    quantity--;
-                    quantityInput.value = quantity;
-                }
-            });
+            if (quantityMinus && quantityPlus) {
+                quantityMinus.addEventListener('click', () => {
+                    if (quantity > 1) {
+                        quantity--;
+                        quantityInput.value = quantity;
+                    }
+                });
 
-            quantityPlus.addEventListener('click', () => {
-                if (quantity < 10) {
-                    quantity++;
-                    quantityInput.value = quantity;
-                }
-            });
+                quantityPlus.addEventListener('click', () => {
+                    if (quantity < 10) {
+                        quantity++;
+                        quantityInput.value = quantity;
+                    }
+                });
+            }
 
-            // Add to cart button
-            document.getElementById('add-to-cart').addEventListener('click', () => {
-                addToCart(quantity);
-                // Reset quantity
-                quantity = 1;
-                quantityInput.value = quantity;
-            });
+            // Add to cart button on product page
+            const addToCartBtn = document.getElementById('add-to-cart');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', () => {
+                    addToCart(quantity);
+                    // Reset quantity
+                    quantity = 1;
+                    if (quantityInput) quantityInput.value = quantity;
+                });
+            }
+
+            // View product button on showcase
+            const viewProductBtn = document.getElementById('view-product-btn');
+            if (viewProductBtn) {
+                viewProductBtn.addEventListener('click', () => {
+                    navigateToProductPage();
+                    window.location.hash = 'product';
+                });
+            }
 
             // Navigation links
             document.getElementById('home-link').addEventListener('click', (e) => {
                 e.preventDefault();
                 navigateToHomePage();
                 window.location.hash = '';
-            });
-
-            // Product card on home page
-            document.querySelector('.product-card-home').addEventListener('click', (e) => {
-                e.preventDefault();
-                navigateToProductPage();
-                window.location.hash = 'product';
-            });
-
-            // Navigation links for product page
-            document.querySelectorAll('a[href="#product"]').forEach(link => {
-                if (!link.classList.contains('product-card-home')) {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        navigateToProductPage();
-                        window.location.hash = 'product';
-                    });
-                }
             });
 
             // Navigation links for home
@@ -1707,24 +1926,22 @@
                 }
             });
 
-            // Setup gallery when on product page
-            if (document.querySelector('.product-gallery-thumbs')) {
-                setupGallery();
-            }
-
             // Checkout button
-            document.querySelector('.cart-summary .btn').addEventListener('click', () => {
-                if (cart.length === 0) {
-                    alert('Votre panier est vide. Ajoutez des produits avant de commander.');
-                    return;
-                }
-                
-                alert('Merci pour votre commande ! Elle sera traitée rapidement.');
-                cart = [];
-                updateCartDisplay();
-                document.getElementById('cart-modal').classList.remove('active');
-                document.getElementById('overlay').classList.remove('active');
-            });
+            const checkoutBtn = document.querySelector('.cart-summary .btn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', () => {
+                    if (cart.length === 0) {
+                        alert('Votre panier est vide. Ajoutez des produits avant de commander.');
+                        return;
+                    }
+                    
+                    alert('Merci pour votre commande ! Elle sera traitée rapidement.');
+                    cart = [];
+                    updateCartDisplay();
+                    document.getElementById('cart-modal').classList.remove('active');
+                    document.getElementById('overlay').classList.remove('active');
+                });
+            }
         }
 
         // Add CSS for notification animation
